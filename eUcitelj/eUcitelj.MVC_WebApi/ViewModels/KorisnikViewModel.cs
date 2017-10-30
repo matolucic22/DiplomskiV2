@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +8,7 @@ namespace eUcitelj.MVC_WebApi.ViewModels
 {
     public class KorisnikViewModel
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid KorisnikId { get; set; }
 
         public string Ime_korisnika { get; set; }

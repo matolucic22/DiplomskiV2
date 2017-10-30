@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eUcitelj.Model.Common;
 using eUcitelj.MVC_WebApi.ViewModels;
 using eUcitelj.Service.Common;
 using System;
@@ -35,5 +36,90 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
         }
+
+        [HttpGet]
+        [Route("getK")]
+        public async Task<HttpResponseMessage> GetKorisnik(Guid Id)
+        {
+            try
+            {
+                var response = Mapper.Map<KorisnikViewModel>(await KorisnikService.Get(Id));
+                return Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch(Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
+
+        [HttpPost]
+        [Route("addK")]
+        public async Task<HttpResponseMessage> AddKorisnik(KorisnikViewModel addObj)//httpresponsemessage - convert to HTTP convert message
+        {
+            try
+            {
+                addObj.KorisnikId = Guid.NewGuid();
+               // addObj.Korisnicko_ime = "ML";
+                var response = await KorisnikService.Add(Mapper.Map<IKorisnikDomainModel>((addObj)));
+                return Request.CreateResponse(HttpStatusCode.OK, response);
+
+            }catch(Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
+
+        [HttpPut]
+        [Route("updateK")]
+        public async Task<HttpResponseMessage> UpdateKorisnik(KorisnikViewModel updateK)
+        {
+            try
+            {
+
+                KorisnikViewModel toBeUpdated =Mapper.Map<KorisnikViewModel>(await KorisnikService.Get(updateK.KorisnikId));
+
+                if (toBeUpdated == null)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Nije pronađen trazeni korisnik.");
+                }
+                if (updateK.Ime_korisnika==null||updateK.Korisnicko_ime==null || updateK.KorisnikId==null || updateK.Password==null || updateK.Potvrda==null || updateK.Prezime_korisnika==null || updateK.Role==null)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Greska u unosu!");
+                }
+                else
+                {
+                    toBeUpdated.KorisnikId = updateK.KorisnikId;
+                    toBeUpdated.Ime_korisnika = updateK.Ime_korisnika;
+                    toBeUpdated.Prezime_korisnika = updateK.Prezime_korisnika;
+                    toBeUpdated.Korisnicko_ime = updateK.Korisnicko_ime;
+                    toBeUpdated.KorisnikId = updateK.KorisnikId;
+                    toBeUpdated.Password = updateK.Password;
+                    toBeUpdated.Potvrda = updateK.Potvrda;
+                    toBeUpdated.Role = updateK.Role;
+                }
+                var response = await KorisnikService.Update(Mapper.Map<IKorisnikDomainModel>(toBeUpdated));
+                return Request.CreateResponse(HttpStatusCode.OK, response);
+
+            } catch (Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
+
+        [HttpDelete]
+        [Route("deleteK")]
+        public async Task<HttpResponseMessage> DeleteVehMake(Guid Id)
+        {
+            try
+            {
+                var response = await KorisnikService.Delete(Id);
+                return Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
+
     }
 }
