@@ -195,6 +195,9 @@
     <Compile Include="AutoMapperConf\MappingProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KorisnikController.cs" />
+    <Compile Include="Controllers\KvizController.cs" />
+    <Compile Include="Controllers\OcjeneController.cs" />
+    <Compile Include="Controllers\PredmetiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

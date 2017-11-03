@@ -11,38 +11,38 @@ namespace eUcitelj.MVC_WebApi.AutoMapperConf
 {
     public class MappingProfile:Profile
     {
-        protected override void Configure()
+        public MappingProfile()
         {      
             //Domain to View
-            CreateMap<KorisnikDomainModel, KorisnikViewModel>().ReverseMap();
+            CreateMap<KorisnikDomainModel, KorisnikViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-Domain
-            CreateMap<KorisnikDomainModel, IKorisnikDomainModel>().ReverseMap();
+            CreateMap<KorisnikDomainModel, IKorisnikDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-View
-            CreateMap<IKorisnikDomainModel, KorisnikViewModel>().ReverseMap();
+            CreateMap<IKorisnikDomainModel, KorisnikViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
 
 
             //Domain to View
-            CreateMap<PredmetiDomainModel, PredmetiViewModel>().ReverseMap();
+            CreateMap<PredmetiDomainModel, PredmetiViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-Domain
-            CreateMap<PredmetiDomainModel, IPredmetiDomainModel>().ReverseMap();
+            CreateMap<PredmetiDomainModel, IPredmetiDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-View
-            CreateMap<IPredmetiDomainModel, PredmetiViewModel>().ReverseMap();
+            CreateMap<IPredmetiDomainModel, PredmetiViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
 
 
             //Domain to View
-            CreateMap<OcjeneDomanModel, OcjeneViewModel>().ReverseMap();
+            CreateMap<OcjeneDomanModel, OcjeneViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-Domain
-            CreateMap<OcjeneDomanModel, IOcjeneDomainModel>().ReverseMap();
+            CreateMap<OcjeneDomanModel, IOcjeneDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-View
-            CreateMap<IOcjeneDomainModel, OcjeneViewModel>().ReverseMap();
+            CreateMap<IOcjeneDomainModel, OcjeneViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
 
 
             //Domain to View
-            CreateMap<KvizDomainModel, KvizViewModel>().ReverseMap();
+            CreateMap<KvizDomainModel, KvizViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-Domain
-            CreateMap<KvizDomainModel, IKvizDomainModel>().ReverseMap();
+            CreateMap<KvizDomainModel, IKvizDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-View
-            CreateMap<IKvizDomainModel, KvizViewModel>().ReverseMap();
+            CreateMap<IKvizDomainModel, KvizViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
         }
     }
 }

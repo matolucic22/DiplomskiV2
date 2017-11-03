@@ -9,7 +9,7 @@ namespace eUcitelj.Reporsitory.Common
 {
    public interface IPredmetiGenericReporsitory
     {
-        Task<IEnumerable<IPredmetiDomainModel>> GetAllAsync();//vraća IEnimerable polje podataka
+        Task<IEnumerable<IPredmetiDomainModel>> GetAllAsync();//vraća IEnumerable polje podataka
         Task<IPredmetiDomainModel> GetAsync(Guid Id);
         Task<int> AddAsync(IPredmetiDomainModel addObj);
         Task<int> UpdateAsync(IPredmetiDomainModel updated);//obavi i returna samo save

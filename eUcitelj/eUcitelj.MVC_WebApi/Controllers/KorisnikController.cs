@@ -23,7 +23,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("getallK")]
+        [Route("getAllK")]
         public async Task<HttpResponseMessage> GetAllKorisnik()
         {
             try
@@ -44,6 +44,13 @@ namespace eUcitelj.MVC_WebApi.Controllers
             try
             {
                 var response = Mapper.Map<KorisnikViewModel>(await KorisnikService.Get(Id));
+
+                if (response == null)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Traženi element nije pronađen u bazi podataka");
+                }
+
+
                 return Request.CreateResponse(HttpStatusCode.OK, response);
             }
             catch(Exception e)
@@ -60,7 +67,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
             {
                 addObj.KorisnikId = Guid.NewGuid();
                // addObj.Korisnicko_ime = "ML";
-                var response = await KorisnikService.Add(Mapper.Map<IKorisnikDomainModel>((addObj)));
+                var response = await KorisnikService.Add(Mapper.Map<IKorisnikDomainModel>(addObj));
                 return Request.CreateResponse(HttpStatusCode.OK, response);
 
             }catch(Exception e)
@@ -88,7 +95,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 }
                 else
                 {
-                    toBeUpdated.KorisnikId = updateK.KorisnikId;
+                   // toBeUpdated.KorisnikId = updateK.KorisnikId;
                     toBeUpdated.Ime_korisnika = updateK.Ime_korisnika;
                     toBeUpdated.Prezime_korisnika = updateK.Prezime_korisnika;
                     toBeUpdated.Korisnicko_ime = updateK.Korisnicko_ime;
@@ -108,7 +115,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
 
         [HttpDelete]
         [Route("deleteK")]
-        public async Task<HttpResponseMessage> DeleteVehMake(Guid Id)
+        public async Task<HttpResponseMessage> DeleteKorisnik(Guid Id)
         {
             try
             {

@@ -12,35 +12,55 @@ namespace eUcitelj.Reporsitory
 {
     public class PredmetiGenericReporsitory : IPredmetiGenericReporsitory
     {
-        protected IReporsitory Reporsitory{ get; set;}
-        PredmetiGenericReporsitory(IReporsitory reporsitory)
+       protected IReporsitory Reporsitory{ get; set;}
+       public PredmetiGenericReporsitory(IReporsitory reporsitory)
         {
             this.Reporsitory = reporsitory;
         }
 
         public async Task<int> AddAsync(IPredmetiDomainModel addObj)
         {
-            return await Reporsitory.AddAsync(Mapper.Map<Korisnik>(addObj));
+            return await Reporsitory.AddAsync(Mapper.Map<Predmeti>(addObj));
         }
 
         public async Task<int> DeleteAsync(Guid Id)
         {
-            return await Reporsitory.DeleteAsync<Korisnik>(Id);
+            return await Reporsitory.DeleteAsync<Predmeti>(Id);
         }
 
         public async Task<IEnumerable<IPredmetiDomainModel>> GetAllAsync()
         {
-            return Mapper.Map<IEnumerable<IPredmetiDomainModel>>(await Reporsitory.GetAllAsync<Predmeti>());
+            try
+            {
+                return Mapper.Map<IEnumerable<IPredmetiDomainModel>>(await Reporsitory.GetAllAsync<Predmeti>());
+
+            }catch(Exception e)
+            {
+                throw e;
+            }
         }
 
         public async Task<IPredmetiDomainModel> GetAsync(Guid Id)
         {
-            return Mapper.Map<IPredmetiDomainModel>(await Reporsitory.GetAsync<Predmeti>(Id));
+            try
+            {
+                return Mapper.Map<IPredmetiDomainModel>(await Reporsitory.GetAsync<Predmeti>(Id));
+
+            }catch(Exception e)
+            {
+                throw e;
+            }
         }
 
         public async Task<int> UpdateAsync(IPredmetiDomainModel updated)
         {
-            return await Reporsitory.UpdateAsync<Predmeti>(Mapper.Map<Predmeti>(updated));
+            try
+            {
+                return await Reporsitory.UpdateAsync(Mapper.Map<Predmeti>(updated));
+            }catch(Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

@@ -16,9 +16,9 @@ namespace eUcitelj.DAL.Models
         public string Ime_predmeta { get; set; }
 
 
-        public virtual ICollection<IOcjene> Ocjene { get; set; }//1 predmet moze imati vise ocijena
+        //public virtual ICollection<IOcjene> Ocjene { get; set; }//1 predmet moze imati vise ocijena
 
-        public virtual ICollection<IKviz> Kviz { get; set; }//1 predmet moze imati vise kvizova
-        public virtual IKorisnik Korisnik { get; set; }//poziva jednog korisnika di je npr id=1; - 1 predmet ima vise korisnika. Zato što svaki model ima 1 make m
+        //public virtual ICollection<IKviz> Kviz { get; set; }//1 predmet moze imati vise kvizova
+        //public virtual IKorisnik Korisnik { get; set; }//poziva jednog korisnika di je npr id=1; - 1 predmet ima vise korisnika. Zato što svaki model ima 1 make m
     }
 }

@@ -13,7 +13,7 @@ namespace eUcitelj.Reporsitory
     public class OcjeneGenericReporsiory : IOcjeneGenericReporsitory
     {
         protected IReporsitory Reporsitory { get; set; }
-        OcjeneGenericReporsiory(IReporsitory reporsitory)
+        public OcjeneGenericReporsiory(IReporsitory reporsitory)
         {
             this.Reporsitory = reporsitory;
         }

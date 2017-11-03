@@ -13,38 +13,38 @@ namespace eUcitelj.DResolver.MappingConfig
 {
    public class MappingProfile:Profile
     {
-        protected override void Configure()
+        public MappingProfile()
         {
             //POCO to Domain
-            CreateMap<Korisnik, KorisnikDomainModel>().ReverseMap();
+            CreateMap<Korisnik, KorisnikDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IDomain
-            CreateMap<Korisnik, IKorisnikDomainModel>().ReverseMap();
+            CreateMap<Korisnik, IKorisnikDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IPOCO
-            CreateMap<Korisnik, IKorisnik>().ReverseMap();
+            CreateMap<Korisnik, IKorisnik>().PreserveReferences().ReverseMap().PreserveReferences();
 
 
             //POCO to Domain
-            CreateMap<Predmeti, PredmetiDomainModel>().ReverseMap();
+            CreateMap<Predmeti, PredmetiDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IDomain
-            CreateMap<Predmeti, IPredmetiDomainModel>().ReverseMap();
+            CreateMap<Predmeti, IPredmetiDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IPOCO
-            CreateMap<Predmeti, IPredmeti>().ReverseMap();
+            CreateMap<Predmeti, IPredmeti>().PreserveReferences().ReverseMap().PreserveReferences();
 
 
             //POCO to Domain
-            CreateMap<Ocjene, OcjeneDomanModel>().ReverseMap();
+            CreateMap<Ocjene, OcjeneDomanModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IDomain
-            CreateMap<Ocjene, IOcjeneDomainModel>().ReverseMap();
+            CreateMap<Ocjene, IOcjeneDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IPOCO
-            CreateMap<Ocjene, IOcjene>().ReverseMap();
+            CreateMap<Ocjene, IOcjene>().PreserveReferences().ReverseMap().PreserveReferences();
 
 
             //POCO to Domain
-            CreateMap<Kviz, KvizDomainModel>().ReverseMap();
+            CreateMap<Kviz, KvizDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IDomain
-            CreateMap<Kviz, IKvizDomainModel>().ReverseMap();
+            CreateMap<Kviz, IKvizDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IPOCO
-            CreateMap<Kviz, IKviz>().ReverseMap();
+            CreateMap<Kviz, IKviz>().PreserveReferences().ReverseMap().PreserveReferences();
         }
     }
 }
