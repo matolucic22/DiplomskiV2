@@ -29,6 +29,6 @@ namespace eUcitelj.DAL.Models
 
         public string Tocan_odgovor { get; set; }
 
-        public virtual IPredmeti Predmeti { get; set; }
+        //public virtual IPredmeti Predmeti { get; set; }
     }
 }

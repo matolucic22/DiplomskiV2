@@ -18,7 +18,7 @@ namespace eUcitelj.DAL.Common
         int Bodovi { get; set; }
 
 
-        IPredmeti Predmeti { get; set; }
+        //IPredmeti Predmeti { get; set; }
 
     }
 }

@@ -11,6 +11,6 @@ namespace eUcitelj.DAL.Common
         Guid OcjeneId { get; set; }
         Guid PredmetiId { get; set; }
         int Ocjena { get; set; }
-        IPredmeti Predmeti { get; set; }
+       // IPredmeti Predmeti { get; set; }
     }
 }

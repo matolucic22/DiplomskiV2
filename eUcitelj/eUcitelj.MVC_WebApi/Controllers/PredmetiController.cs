@@ -93,9 +93,9 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 }
                 else
                 {
+                   // toBeUpdated.PredmetiId = updateP.PredmetiId;
                     toBeUpdated.Ime_predmeta = updateP.Ime_predmeta;
                     toBeUpdated.KorisnikId = updateP.KorisnikId;
-                    toBeUpdated.PredmetiId = updateP.PredmetiId;
                 }
                 var response = await PredmetiService.Update(Mapper.Map<IPredmetiDomainModel>(toBeUpdated));
                 return Request.CreateResponse(HttpStatusCode.OK, response);

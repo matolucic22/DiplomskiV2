@@ -17,6 +17,6 @@ namespace eUcitelj.Model.Common
         String Odg3 { get; set; }
         String Tocan_odgovor { get; set; }
         int Bodovi { get; set; }
-        IPredmeti Predmeti { get; set; }
+        //IPredmeti Predmeti { get; set; }
     }
 }

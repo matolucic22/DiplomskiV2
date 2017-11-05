@@ -68,43 +68,42 @@ namespace eUcitelj.MVC_WebApi.Controllers
             }
         }
 
-        //[HttpPut]
-        //[Route("updateK")]
-        //public async Task<HttpResponseMessage> UpdateKviz(KvizViewModel updateK)
-        //{
-        //    try
-        //    {
+        [HttpPut]
+        [Route("updateK")]
+        public async Task<HttpResponseMessage> UpdateKviz(KvizViewModel updateK)
+        {
+            try
+            {
 
-        //        KorisnikViewModel toBeUpdated = Mapper.Map<KorisnikViewModel>(await KorisnikService.Get(updateK.KorisnikId));
+                KvizViewModel toBeUpdated = Mapper.Map<KvizViewModel>(await KvizService.Get(updateK.KvizId));
 
-        //        if (toBeUpdated == null)
-        //        {
-        //            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Nije pronađen trazeni korisnik.");
-        //        }
-        //        if (updateK.Ime_korisnika == null || updateK.Korisnicko_ime == null || updateK.KorisnikId == null || updateK.Password == null || updateK.Potvrda == null || updateK.Prezime_korisnika == null || updateK.Role == null)
-        //        {
-        //            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Greska u unosu!");
-        //        }
-        //        else
-        //        {
-        //            toBeUpdated.KorisnikId = updateK.KorisnikId;
-        //            toBeUpdated.Ime_korisnika = updateK.Ime_korisnika;
-        //            toBeUpdated.Prezime_korisnika = updateK.Prezime_korisnika;
-        //            toBeUpdated.Korisnicko_ime = updateK.Korisnicko_ime;
-        //            toBeUpdated.KorisnikId = updateK.KorisnikId;
-        //            toBeUpdated.Password = updateK.Password;
-        //            toBeUpdated.Potvrda = updateK.Potvrda;
-        //            toBeUpdated.Role = updateK.Role;
-        //        }
-        //        var response = await KorisnikService.Update(Mapper.Map<IKorisnikDomainModel>(toBeUpdated));
-        //        return Request.CreateResponse(HttpStatusCode.OK, response);
+                if (toBeUpdated == null)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Nije pronađen trazeni kviz.");
+                }
+                if (updateK.Odg1 == null || updateK.Odg2 == null || updateK.Odg3 == null || updateK.Bodovi <1 || updateK.Bodovi>5 || updateK.Pitanje == null || updateK.Tocan_odgovor == null)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Greska u unosu!");
+                }
+                else
+                {
+                    toBeUpdated.Odg1 = updateK.Odg1;
+                    toBeUpdated.Odg2 = updateK.Odg2;
+                    toBeUpdated.Odg3 = updateK.Odg3;
+                    toBeUpdated.Bodovi = updateK.Bodovi;
+                    toBeUpdated.Pitanje = updateK.Pitanje;
+                    toBeUpdated.Tocan_odgovor = updateK.Tocan_odgovor;
+                    
+                }
+                var response = await KvizService.Update(Mapper.Map<IKvizDomainModel>(toBeUpdated));
+                return Request.CreateResponse(HttpStatusCode.OK, response);
 
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
-        //    }
-        //}
+            }
+            catch (Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
 
         [HttpDelete]
         [Route("deleteK")]

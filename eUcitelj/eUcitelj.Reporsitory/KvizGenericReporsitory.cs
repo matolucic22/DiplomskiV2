@@ -13,7 +13,7 @@ namespace eUcitelj.Reporsitory
     public class KvizGenericReporsitory : IKvizGenericReporsitory
     {
         protected IReporsitory Reporsitory { get; set; }
-        KvizGenericReporsitory (IReporsitory reporsitory)
+        public KvizGenericReporsitory (IReporsitory reporsitory)
         {
             this.Reporsitory = reporsitory;
         }

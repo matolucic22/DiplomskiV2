@@ -82,7 +82,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Nije moguće završiti radnju.");
                 }
-                if (updateO.OcjeneId==null||updateO.PredmetiId==null||updateO.Ocjena>5||updateO.Ocjena<1)
+                if (updateO.OcjeneId==null||updateO.PredmetiId==null/*||updateO.Ocjena>5||updateO.Ocjena<1*/)
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Greska u unosu!");
                 }

@@ -13,6 +13,6 @@ namespace eUcitelj.Model
         public Guid OcjeneId { get; set; }
         public Guid PredmetiId { get; set; }
         public int Ocjena { get; set; }
-        public virtual IPredmeti Predmeti { get; set; }
+       // public virtual IPredmeti Predmeti { get; set; }
     }
 }

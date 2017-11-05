@@ -14,6 +14,6 @@ namespace eUcitelj.DAL.Models
         public Guid OcjeneId { get; set; }
 
         public Guid PredmetiId { get; set; }
-        public IPredmeti Predmeti { get; set; }
+       // public IPredmeti Predmeti { get; set; }
     }
 }
