@@ -10,6 +10,6 @@ namespace eUcitelj.MVC_WebApi.ViewModels
         public Guid OcjeneId { get; set; }
         public Guid PredmetiId { get; set; }
         public int Ocjena { get; set; }
-        public virtual PredmetiViewModel Predmeti { get; set; }
+        //public virtual PredmetiViewModel Predmeti { get; set; }
     }
 }

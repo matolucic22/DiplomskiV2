@@ -27,7 +27,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
         public async Task<HttpResponseMessage> GetAllKorisnik()
         {
             try
-            {
+            {  
                 var response = Mapper.Map<IEnumerable<KorisnikViewModel>>(await KorisnikService.GetAll());
                 return Request.CreateResponse(HttpStatusCode.OK, response);
             }
@@ -66,6 +66,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
             try
             {
                 addObj.KorisnikId = Guid.NewGuid();
+                
                // addObj.Korisnicko_ime = "ML";
                 var response = await KorisnikService.Add(Mapper.Map<IKorisnikDomainModel>(addObj));
                 return Request.CreateResponse(HttpStatusCode.OK, response);

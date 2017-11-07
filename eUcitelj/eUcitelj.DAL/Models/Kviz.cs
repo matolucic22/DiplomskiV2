@@ -1,6 +1,7 @@
 ﻿using eUcitelj.DAL.Common;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,9 @@ namespace eUcitelj.DAL.Models
 {
     public class Kviz:IKviz
     {
-        public int Bodovi { get; set; }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid KvizId { get; set; }
+        public int Bodovi { get; set; }
 
         public string Odg1 { get; set; }
 
@@ -23,12 +24,14 @@ namespace eUcitelj.DAL.Models
 
         public string Pitanje { get; set; }
 
+        
 
         public Guid PredmetiId { get; set; }
 
 
         public string Tocan_odgovor { get; set; }
 
-        //public virtual IPredmeti Predmeti { get; set; }
+        [ForeignKey("PredmetiId")]
+        public virtual Predmeti Predmeti { get; set; }
     }
 }

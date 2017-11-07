@@ -33,7 +33,7 @@ namespace eUcitelj.Service
 
         public async Task<IEnumerable<IKorisnikDomainModel>> GetAll()
         {
-            return await KorisnikGenericReporsitory.GetAllAsync();
+            return await KorisnikGenericReporsitory.GetAllAsync();//dođe do tu
         }
 
         public async Task<int> Update(IKorisnikDomainModel updated)

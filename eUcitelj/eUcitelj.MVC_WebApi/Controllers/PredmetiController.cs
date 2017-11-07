@@ -28,6 +28,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
             try
             {
                 var response = Mapper.Map<IEnumerable<PredmetiViewModel>>(await PredmetiService.GetAll());
+                
                 return Request.CreateResponse(HttpStatusCode.OK, response);
 
 
@@ -44,7 +45,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
             try
             {
                 var response = Mapper.Map<PredmetiViewModel>(await PredmetiService.Get(Id));
-
+                
                 if(response==null)
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Traženi element nije pronađen u bazi podataka");
@@ -65,6 +66,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
         {
             try
             {
+                
                 addObj.PredmetiId = Guid.NewGuid();
                 var response= await PredmetiService.Add(Mapper.Map<IPredmetiDomainModel>(addObj));
                 return Request.CreateResponse(HttpStatusCode.OK, response);

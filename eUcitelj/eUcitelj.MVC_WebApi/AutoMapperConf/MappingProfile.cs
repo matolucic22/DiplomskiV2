@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using eUcitelj.DAL.Common;
+using eUcitelj.DAL.Models;
 using eUcitelj.Model;
 using eUcitelj.Model.Common;
 using eUcitelj.MVC_WebApi.ViewModels;
@@ -43,6 +45,20 @@ namespace eUcitelj.MVC_WebApi.AutoMapperConf
             CreateMap<KvizDomainModel, IKvizDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //Interface(Domain)-View
             CreateMap<IKvizDomainModel, KvizViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+
+
+
+            CreateMap<Predmeti, PredmetiViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            CreateMap<IPredmeti, PredmetiViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+
+            CreateMap<Korisnik, KorisnikViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            CreateMap<IKorisnik, KorisnikViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+
+            CreateMap<Ocjene, OcjeneViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            CreateMap<IOcjene, OcjeneViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+
+            CreateMap<Kviz, KvizViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            CreateMap<IKviz, KvizViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
         }
     }
 }

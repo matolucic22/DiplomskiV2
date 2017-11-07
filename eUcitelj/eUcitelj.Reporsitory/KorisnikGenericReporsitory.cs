@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eUcitelj.DAL.Common;
 using eUcitelj.DAL.Models;
 using eUcitelj.Model;
 using eUcitelj.Model.Common;

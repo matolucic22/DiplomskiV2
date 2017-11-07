@@ -258,6 +258,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\eUcitelj.DAL.Common\eUcitelj.DAL.Common.csproj">
+      <Project>{61FB2348-4F47-4705-9DD2-0D453B670028}</Project>
+      <Name>eUcitelj.DAL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eUcitelj.DAL\eUcitelj.DAL.csproj">
+      <Project>{882A72A0-778C-439D-B70A-C4C0257C59A3}</Project>
+      <Name>eUcitelj.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\eUcitelj.DResolver\eUcitelj.DResolver.csproj">
       <Project>{2609316b-3cf1-4d32-b74f-589944c59896}</Project>
       <Name>eUcitelj.DResolver</Name>

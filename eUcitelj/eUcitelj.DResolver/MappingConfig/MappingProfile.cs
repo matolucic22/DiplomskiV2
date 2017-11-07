@@ -45,6 +45,8 @@ namespace eUcitelj.DResolver.MappingConfig
             CreateMap<Kviz, IKvizDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IPOCO
             CreateMap<Kviz, IKviz>().PreserveReferences().ReverseMap().PreserveReferences();
+
+            
         }
     }
 }
