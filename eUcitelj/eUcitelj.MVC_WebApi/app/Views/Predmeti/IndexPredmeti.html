@@ -1,0 +1,23 @@
+﻿<div class="container" ng-controller="PredmetiController">
+    <h1>Predmeti</h1>
+   
+    <br />
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Ime korisnika
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="pr in predmeti">
+                <td>{{pr.Ime_predmeta}}</td>
+               
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <p>OVO JE INDEXPREDMETI</p>
+</div>
