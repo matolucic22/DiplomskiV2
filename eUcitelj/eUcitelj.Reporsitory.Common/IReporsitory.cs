@@ -13,5 +13,6 @@ namespace eUcitelj.Reporsitory.Common
         Task<int> AddAsync<T>(T addObj) where T : class;
         Task<int> UpdateAsync<T>(T updated) where T : class;
         Task<int> DeleteAsync<T>(Guid Id) where T : class;
+        IQueryable<T> GetQueryable<T>() where T : class;
     }
 }

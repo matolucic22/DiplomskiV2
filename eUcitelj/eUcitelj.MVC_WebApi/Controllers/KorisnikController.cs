@@ -2,6 +2,7 @@
 using eUcitelj.Model.Common;
 using eUcitelj.MVC_WebApi.ViewModels;
 using eUcitelj.Service.Common;
+using eUcitelj.Token;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -126,6 +127,40 @@ namespace eUcitelj.MVC_WebApi.Controllers
             catch (Exception e)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
+
+        [HttpPost]
+        [Route("logintoken")]
+        public async Task<HttpResponseMessage> LoginTonken(UserCredentials userCredentials)
+        {
+            var userToLogin = Mapper.Map<KorisnikViewModel>(await KorisnikService.FindByUserName(userCredentials.Korisnicko_ime));
+
+            if(userToLogin==null)
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Korisnik nije registriran");
+            }
+            else if(userCredentials.Password!=userToLogin.Password)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Password is incorect");
+            }
+            else
+            {
+                var tokenDuration = DateTime.UtcNow.AddMinutes(1);//POSTAVLJANJE VREMENAAA
+                var token = new TokenFactory(tokenDuration).GenerateToken();
+                var tokenResponse = new TokenResponse()
+                {
+                    KorisnikId = userToLogin.KorisnikId,
+                    Korisnicko_ime = userCredentials.Korisnicko_ime,
+                    Token = token                 
+
+                };
+                //store loged user -- moraš dodat u bazu vidi!
+
+
+                return Request.CreateResponse(HttpStatusCode.OK, tokenResponse);
+
+
             }
         }
 

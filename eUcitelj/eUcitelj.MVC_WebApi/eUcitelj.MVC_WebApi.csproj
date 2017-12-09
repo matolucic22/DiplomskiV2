@@ -209,8 +209,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\Controllers\Korisnik\LoginController.js" />
     <Content Include="app\Controllers\Predmeti\PredmetiController.js" />
-    <Content Include="app\test.html" />
+    <Content Include="app\Controllers\Korisnik\RegisterController.js" />
+    <Content Include="app\js\md5.js" />
+    <Content Include="app\js\ngStorage.js" />
+    <Content Include="app\Services\AuthenticationService.js" />
+    <Content Include="app\Views\Korisnik\Login.html" />
+    <Content Include="app\Views\Korisnik\Register.html" />
     <Content Include="app\Views\Predmeti\IndexPredmeti.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -227,6 +233,8 @@
     <Content Include="Scripts\angular-csp.css" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-local-storage.js" />
+    <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
     <Content Include="Scripts\angular-message-format.min.js" />
     <Content Include="Scripts\angular-messages.js" />
@@ -267,6 +275,7 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-local-storage.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1068,6 +1077,10 @@
     <ProjectReference Include="..\eUcitelj.Service.Common\eUcitelj.Service.Common.csproj">
       <Project>{BB0B8ECE-0F0F-4F61-9079-BF481CA32DC2}</Project>
       <Name>eUcitelj.Service.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eUcitelj.Token\eUcitelj.Token.csproj">
+      <Project>{C342E9B9-FB0B-477D-94B0-8533B08A25D6}</Project>
+      <Name>eUcitelj.Token</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

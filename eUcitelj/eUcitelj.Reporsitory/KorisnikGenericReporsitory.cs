@@ -6,6 +6,7 @@ using eUcitelj.Model.Common;
 using eUcitelj.Reporsitory.Common;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,20 @@ namespace eUcitelj.Reporsitory
             try
             {
                 return await Reporsitory.UpdateAsync(Mapper.Map<Korisnik>(updated));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<IKorisnikDomainModel> GetByUsername(string korisnicko_ime)
+        {
+            try
+            {
+                return Mapper.Map<IKorisnikDomainModel>(await Reporsitory.GetQueryable<Korisnik>().Where
+                    (i => i.Korisnicko_ime == korisnicko_ime).FirstOrDefaultAsync());//.Where
+                //(i => i.Korisnicko_ime == korisnicko_ime).Include(j => j.KorisnikId).FirstOrDefaultAsync());
             }
             catch (Exception ex)
             {

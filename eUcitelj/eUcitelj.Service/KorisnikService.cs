@@ -18,7 +18,7 @@ namespace eUcitelj.Service
         }
         public async Task<int> Add(IKorisnikDomainModel addObj)
         {
-           return await KorisnikGenericReporsitory.AddAsync(addObj);
+            return await KorisnikGenericReporsitory.AddAsync(addObj);
         }
 
         public async Task<int> Delete(Guid Id)
@@ -40,5 +40,11 @@ namespace eUcitelj.Service
         {
             return await KorisnikGenericReporsitory.UpdateAsync(updated);
         }
+        //find user by username
+        public async Task<IKorisnikDomainModel> FindByUserName(string korisnicko_ime)
+        {
+            return await KorisnikGenericReporsitory.GetByUsername(korisnicko_ime);
+        }
+
     }
 }

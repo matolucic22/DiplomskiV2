@@ -49,5 +49,10 @@ namespace eUcitelj.Reporsitory
              Context.Set<T>().AddOrUpdate(updated);
             return await Context.SaveChangesAsync();
         }
+
+        public IQueryable<T> GetQueryable<T>() where T:class
+        {
+            return Context.Set<T>();
+        }
     }
 }
