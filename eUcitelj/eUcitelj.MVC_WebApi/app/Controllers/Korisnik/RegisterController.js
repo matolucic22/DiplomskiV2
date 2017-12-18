@@ -27,7 +27,9 @@
                     modal.style.display = "block";
                 }
             , function (jqXHR) {
-                window.alert("Greška prilikom spremanja podataka.");
+                
+                window.alert("Unešeno korisničko ime već postoji.");
+                
             });
         };
 

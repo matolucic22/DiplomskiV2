@@ -25,8 +25,8 @@
             AuthenticationService.Login(userToLogin.Korisnicko_ime, userToLogin.Password, function (result) {
 
                 if (result == true) {
-                    $window.alert("Dobro došli u sustav."); //osvi stavi za dalje
-                    $location.path('/predmeti');
+                   //$window.alert("Dobro došli u sustav."); //osvi stavi za dalje
+                    $location.path('/korisnik/home');
                 } else if (result == 404) {
                     $window.alert("Korisničko ime nije pronađeno.");
                 } else if (result == 400) {

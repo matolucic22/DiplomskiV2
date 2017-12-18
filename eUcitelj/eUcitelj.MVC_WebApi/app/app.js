@@ -29,5 +29,13 @@ app.config(function ($stateProvider, $urlRouterProvider)
                     templateUrl: 'app/Views/Korisnik/Login.html'
                 }
             }
-        })
+
+        }).state('home', {
+            url: '/korisnik/home',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Korisnik/Home.html'
+                }
+            }
+        });
 });
