@@ -211,6 +211,7 @@
     <Content Include="app\app.js" />
     <Content Include="app\Controllers\Korisnik\HomeController.js" />
     <Content Include="app\Controllers\Korisnik\LoginController.js" />
+    <Content Include="app\Controllers\Korisnik\PotvrdaKorisnikaController.js" />
     <Content Include="app\Controllers\Predmeti\PredmetiController.js" />
     <Content Include="app\Controllers\Korisnik\RegisterController.js" />
     <Content Include="app\js\md5.js" />
@@ -218,6 +219,9 @@
     <Content Include="app\Services\AuthenticationService.js" />
     <Content Include="app\Views\Korisnik\Home.html" />
     <Content Include="app\Views\Korisnik\Login.html" />
+    <Content Include="app\Views\Korisnik\PotvrdaKorisnika.html" />
+    <Content Include="app\Views\Korisnik\PotvrdaKorisnikaOdbijeno.html" />
+    <Content Include="app\Views\Korisnik\PotvrdaKorisnikaPotvrdeno.html" />
     <Content Include="app\Views\Korisnik\Register.html" />
     <Content Include="app\Views\Predmeti\IndexPredmeti.html" />
     <Content Include="Content\bootstrap.css" />

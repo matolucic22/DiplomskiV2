@@ -1,4 +1,5 @@
-﻿using eUcitelj.DAL.Common;
+﻿using eUcitelj.DAL;
+using eUcitelj.DAL.Common;
 using eUcitelj.Reporsitory.Common;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace eUcitelj.Reporsitory
 {
+
     public class Reporsitory : IReporsitory
     {
         protected IeUciteljContext Context { get; set; }
@@ -19,10 +21,13 @@ namespace eUcitelj.Reporsitory
             this.Context = context;
         }
 
+
+        
+
         public async Task<int> AddAsync<T>(T addObj) where T : class
-        {
+        {           
             Context.Set<T>().Add(addObj);
-            return await Context.SaveChangesAsync();
+            return await Context.SaveChangesAsync(); 
         }
 
         public async Task<int> DeleteAsync<T>(Guid Id) where T : class

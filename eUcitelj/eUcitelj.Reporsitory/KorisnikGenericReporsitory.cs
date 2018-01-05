@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eUcitelj.DAL;
 using eUcitelj.DAL.Common;
 using eUcitelj.DAL.Models;
 using eUcitelj.Model;
@@ -22,7 +23,7 @@ namespace eUcitelj.Reporsitory
         }
         public async Task<int> AddAsync(IKorisnikDomainModel addObj)
         {
-            
+            await Reporsitory.GetQueryable<Korisnik>().Where(i => i.Korisnicko_ime == addObj.Korisnicko_ime).FirstOrDefaultAsync();
             return await Reporsitory.AddAsync(Mapper.Map<Korisnik>(addObj));
         }
 
@@ -77,6 +78,20 @@ namespace eUcitelj.Reporsitory
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+        }
+
+        public async Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnicko_ime()
+        {
+            try {
+
+                var response = await Reporsitory.GetQueryable<Korisnik>().ToListAsync();
+                var names= response.Select(a => new Korisnik { Korisnicko_ime = a.Korisnicko_ime }).ToList();
+                return Mapper.Map<IEnumerable<IKorisnikDomainModel>>(names);
+
+            } catch (Exception ex) {
+
                 throw ex;
             }
         }

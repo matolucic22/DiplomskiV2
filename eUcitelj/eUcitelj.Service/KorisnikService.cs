@@ -46,5 +46,10 @@ namespace eUcitelj.Service
             return await KorisnikGenericReporsitory.GetByUsername(korisnicko_ime);
         }
 
+        public async Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnicko_ime()
+        {
+            return await KorisnikGenericReporsitory.GetAllKorisnicko_ime();
+        }
+
     }
 }

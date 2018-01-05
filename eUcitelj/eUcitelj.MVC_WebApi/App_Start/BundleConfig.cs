@@ -18,6 +18,7 @@ namespace eUcitelj.MVC_WebApi
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                 "~/Scripts/angular.js", 
                 "~/Scripts/angular-ui-router.js",
+                //"~/Scripts/angular.min.js",
                 "~/Scripts/angular-local-storage.js",
                 "~/app/js/md5.js",
                 "~/app/js/ngStorage.js",

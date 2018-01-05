@@ -32,10 +32,39 @@ app.config(function ($stateProvider, $urlRouterProvider)
 
         }).state('home', {
             url: '/korisnik/home',
+            controller: 'HomeController',
             views: {
                 "root": {
                     templateUrl: 'app/Views/Korisnik/Home.html'
                 }
             }
+
+        }).state('potvrdaKorisnika', {
+            url: '/korisnik/potvrdaKorisnika',
+            controller: 'PotvrdaKorisnikaController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Korisnik/PotvrdaKorisnika.html'
+                }
+            }
+
+        }).state('potvrdaKorisnikaPotvrdeno', {
+            url: '/korisnik/potvrdaKorisnikaPotvrdeno',
+            controller: 'PotvrdaKorisnikaController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Korisnik/PotvrdaKorisnikaPotvrdeno.html'
+                }
+            }
+
+        }).state('potvrdaKorisnikaOdbijeno', {
+            url: '/korisnik/potvrdaKorisnikaOdbijeno',
+            controller: 'PotvrdaKorisnikaController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Korisnik/potvrdaKorisnikaOdbijeno.html'
+                }
+            }
+
         });
 });

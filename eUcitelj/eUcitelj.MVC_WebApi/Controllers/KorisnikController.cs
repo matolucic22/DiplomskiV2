@@ -67,15 +67,13 @@ namespace eUcitelj.MVC_WebApi.Controllers
             try
             {
                 addObj.KorisnikId = Guid.NewGuid();
-                
-               // addObj.Korisnicko_ime = "ML";
                 var response = await KorisnikService.Add(Mapper.Map<IKorisnikDomainModel>(addObj));
                 return Request.CreateResponse(HttpStatusCode.OK, response);
-
-            }catch(Exception e)
-            {
+             }
+             catch (Exception e)
+             {
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
-            }
+             }           
         }
 
         [HttpPut]
@@ -162,6 +160,21 @@ namespace eUcitelj.MVC_WebApi.Controllers
 
 
             }
+        }
+
+        [HttpGet]
+        [Route("getKI")]
+        public async Task<HttpResponseMessage> GetAllKorisnicko_ime()
+        {
+            try {
+                var response = Mapper.Map<IEnumerable<KorisnikViewModel>>(await KorisnikService.GetAllKorisnicko_ime());
+                return Request.CreateResponse(HttpStatusCode.OK, response);
+                
+            } catch(Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
     }

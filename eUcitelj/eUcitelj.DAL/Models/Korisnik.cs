@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace eUcitelj.DAL.Models
 {
-    public class UniqueUrlAttribute:ValidationAttribute
-    {
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        {
-            eUciteljContext db = new eUciteljContext();
-            string Korisnicko_ime = value.ToString();
-            int count = db.Korisniks.Where(x => x.Korisnicko_ime == Korisnicko_ime).ToList().Count();
-            if(count!=0)
-            {
-                return new ValidationResult("Unešeno korisničko ime već postoji.");
-                
-            }
-            return ValidationResult.Success;
-        }
-    }
+    //public class UniqueUrlAttribute : ValidationAttribute
+    //{
+    //    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    //    {
+    //        eUciteljContext db = new eUciteljContext();
+    //        string Korisnicko_ime = value.ToString();
+    //        int count = db.Korisniks.Where(x => x.Korisnicko_ime == Korisnicko_ime).ToList().Count();
+    //        if (count != 0)
+    //        {
+    //            return new ValidationResult("Unešeno korisničko ime već postoji.");
+
+    //        }
+    //        return ValidationResult.Success;
+    //    }
+    //}
     public class Korisnik:IKorisnik
     {
         //public Korisnik()
@@ -39,7 +39,7 @@ namespace eUcitelj.DAL.Models
         public string Ime_korisnika { get; set; }
 
         public string Prezime_korisnika { get; set; }
-        [UniqueUrl]
+        //[UniqueUrl]
         public string Korisnicko_ime { get; set; }
 
         public string Password { get; set; }
