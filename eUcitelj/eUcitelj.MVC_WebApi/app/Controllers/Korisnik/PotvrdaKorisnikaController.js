@@ -1,5 +1,4 @@
-﻿app.controller('PotvrdaKorisnikaController', function ($scope, $http, $stateParams, $window, $location) {  //!!!***NERIJEŠENO***!!!
-
+﻿app.controller('PotvrdaKorisnikaController', function ($scope, $http, $stateParams, $window, $location) { 
     $scope.korisnici = [];
     $scope.myVal = [];
 
@@ -33,7 +32,11 @@
 
                 $http.put('api/Korisnik/updateK', Korisnik2).then(function (data) {
                     $window.alert("Promijenjeno");
-                    $window.location.reload();
+                    $http.get('/api/Korisnik/getAllK').then(function (response) {
+                        $scope.korisnici = response.data;
+                    }, function () {
+                        console.log("Greška prilikom preuzimanja korisnika iz baze.");
+                    });
                 }, function () {
                     console.log("Greška prilikom postavljanja promjene u bazu.");
                 });
@@ -65,7 +68,11 @@
 
             $http.put('api/Korisnik/updateK', Korisnik2).then(function (data) {
                 $window.alert("Promijenjeno");
-                $window.location.reload();
+                $http.get('/api/Korisnik/getAllK').then(function (response) {
+                    $scope.korisnici = response.data;
+                }, function () {
+                    console.log("Greška prilikom preuzimanja korisnika iz baze.");
+                });
             }, function () {
                 console.log("Greška prilikom postavljanja promjene u bazu.");
             });
@@ -79,10 +86,14 @@
 
     $scope.DeleteK = function (KorisnikId)
     {
-        //var id = $stateParams.KorisnkId;
+        
         $http.delete('/api/Korisnik/deleteK/?Id=' + KorisnikId).then(function (response) {
             $window.alert("Korisnik uklonjen.");
-            $window.location.reload();
+            $http.get('/api/Korisnik/getAllK').then(function (response) {
+                $scope.korisnici = response.data;
+            }, function () {
+                console.log("Greška prilikom preuzimanja korisnika iz baze.");
+            });
         }, function () {
 
             alert("Greska prilikom uklanjanja iz baze");

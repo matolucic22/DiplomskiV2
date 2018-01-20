@@ -20,17 +20,22 @@ function Service($http, $localStorage, localStorageService) {
 
         $http.post('api/Korisnik/logintoken', obj)//dodaj korisnika
             .then(function successCallback(response) {
-                if (response.data.KorisnikId && response.data.Korisnicko_ime && response.data.Token) {
+                if (response.data.KorisnikId && response.data.Korisnicko_ime && response.data.Token && response.data.Role) {
                     $localStorage.currentUser = {
                         KorisnikId: response.data.KorisnikId,
                         Korisnicko_ime: response.data.Korisnicko_ime,
-                        Token: response.data.Token
+                        Token: response.data.Token,
+                        Role: response.data.Role
                     };
+
+                    
 
                     // add jwt token to auth header for all requests made by the $http service
                     $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.Token.TokenString;
 
                     //execute callback with true to indicate successful login
+                   
+
                     callback(true);
                 } else {
                     // execute callback with false to indicate failed login
@@ -77,7 +82,7 @@ function Service($http, $localStorage, localStorageService) {
     function Check() {
         if($localStorage.currentUser!=undefined && $http.defaults.headers.common.Authorization != '')
         {
-            console.log($localStorage.currentUser.Korisnicko_ime);
+            //console.log($localStorage.currentUser.Korisnicko_ime);
             return true;
         }else
         {

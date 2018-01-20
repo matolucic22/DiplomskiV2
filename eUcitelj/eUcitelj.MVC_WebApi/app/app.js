@@ -1,7 +1,9 @@
 ﻿var app = angular.module('app', ['ui.router', 'angularUtils.directives.dirPagination', 'angular-md5', 'LocalStorageModule', 'ngStorage']);
 
-app.config(function ($stateProvider, $urlRouterProvider)
+app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider)
 {
+    localStorageServiceProvider.setPrefix('app');
+    localStorageServiceProvider.setStorageType('localStorage');
     $urlRouterProvider.otherwise('/korisnik/login');
 
     $stateProvider
@@ -68,3 +70,4 @@ app.config(function ($stateProvider, $urlRouterProvider)
 
         });
 });
+

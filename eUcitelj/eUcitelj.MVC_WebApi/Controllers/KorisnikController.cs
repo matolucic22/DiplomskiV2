@@ -13,6 +13,7 @@ using System.Web.Http;
 
 namespace eUcitelj.MVC_WebApi.Controllers
 {
+    
     [RoutePrefix("api/Korisnik")]
     public class KorisnikController : ApiController
     {
@@ -144,19 +145,22 @@ namespace eUcitelj.MVC_WebApi.Controllers
             }
             else
             {
-                var tokenDuration = DateTime.UtcNow.AddMinutes(1);//POSTAVLJANJE VREMENAAA
+                var tokenDuration = DateTime.UtcNow.AddMinutes(10);//POSTAVLJANJE VREMENAAA
                 var token = new TokenFactory(tokenDuration).GenerateToken();
                 var tokenResponse = new TokenResponse()
                 {
                     KorisnikId = userToLogin.KorisnikId,
                     Korisnicko_ime = userCredentials.Korisnicko_ime,
-                    Token = token                 
+                    Token = token,
+                    Role=userToLogin.Role,
+                                     
 
                 };
-                //store loged user -- moraš dodat u bazu vidi!
+                 //ViewBag.usersRole = Role;
 
 
                 return Request.CreateResponse(HttpStatusCode.OK, tokenResponse);
+                
 
 
             }

@@ -11,5 +11,6 @@ namespace eUcitelj.Token
         public Guid KorisnikId { get; set; }//KorisnikId
         public string Korisnicko_ime { get; set; }//Korisnicko_ime
         public Token Token { get; set; }
+        public string Role { get; set; }
     }
 }

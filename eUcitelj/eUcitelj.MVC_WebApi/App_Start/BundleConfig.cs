@@ -28,6 +28,7 @@ namespace eUcitelj.MVC_WebApi
                "~/app/app.js",
                "~/app/Controllers/Predmeti/*Controller.js",
                "~/app/Controllers/Korisnik/*Controller.js",
+               "~/app/Controllers/*Controller.js",
                "~/app/Services/*Service.js"));
 
 
@@ -45,7 +46,8 @@ namespace eUcitelj.MVC_WebApi
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/DropDownMenu.css"));
         }
     }
 }

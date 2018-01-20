@@ -1,11 +1,10 @@
 ﻿app.controller('LoginController', function ($scope, $http, $stateParams, $window, $state, $location, AuthenticationService, md5) {
     
-        $scope.loginData = {
-            Korisnicko_ime: undefined,
-            Password: undefined
-        }
-
-        //fali scope... 'LOAD'
+    $scope.loginData = {
+        Korisnicko_ime: undefined,
+        Password: undefined
+    };
+    
 
         initController();
 
@@ -14,19 +13,19 @@
         };
 
         $scope.doStuff = function () {
+
+           // $window.alert(angular.fromJson($window.localStorage['ngStorage-currentUser']).Role);
             var userToLogin = {
                 Korisnicko_ime: $scope.Korisnicko_ime,
                 Password: undefined
-            }
+            };
 
             userToLogin.Password = md5.createHash($scope.Password || '');
-            //emmit?
-
+           
             AuthenticationService.Login(userToLogin.Korisnicko_ime, userToLogin.Password, function (result) {
-
                 if (result == true) {
-                   //$window.alert("Dobro došli u sustav."); //osvi stavi za dalje
-                    $location.path('/korisnik/home');
+                   $location.path('/korisnik/home');//reload stranice
+                   $window.location.reload();
                 } else if (result == 404) {
                     $window.alert("Korisničko ime nije pronađeno.");
                 } else if (result == 400) {
@@ -35,7 +34,10 @@
                     $window.alert("Greška prilikom logiranja.");
                 }
             });
+            
         };
+   
+       
     
    
 });
