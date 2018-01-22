@@ -9,13 +9,13 @@ namespace eUcitelj.MVC_WebApi.ViewModels
     {
         public string Ime_predmeta { get; set; }
 
-        public Guid KorisnikId { get; set; }
+        //public Guid KorisnikId { get; set; }
 
         public Guid PredmetiId { get; set; }
 
-        public virtual ICollection<OcjeneViewModel> Ocjene { get; set; }//1 predmet moze imati vise ocijena
+        public virtual ICollection<OcjeneViewModel> Ocjene { get; set; }//1 predmet moze imati vise ocjena
 
-       // public virtual ICollection<KvizViewModel> Kviz { get; set; }//1 predmet moze imati vise ocijena
+       // public virtual ICollection<KvizViewModel> Kviz { get; set; }//1 predmet moze imati vise ocjena
        // public virtual KorisnikViewModel Korisnik { get; set; }//poziva jednog korisnika di je npr id=1; - 1 predmet ima vise korisnika. Zato što svaki model ima 1 make m
     }
 }

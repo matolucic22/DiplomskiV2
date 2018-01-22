@@ -213,8 +213,12 @@
     <Content Include="app\Controllers\Korisnik\LoginController.js" />
     <Content Include="app\Controllers\Korisnik\PotvrdaKorisnikaController.js" />
     <Content Include="app\Controllers\navbarController.js" />
+    <Content Include="app\Controllers\Predmeti\AddPredmetiController.js" />
+    <Content Include="app\Controllers\Predmeti\DeletePredmetiController.js" />
+    <Content Include="app\Controllers\Predmeti\EditPredmetiController.js" />
     <Content Include="app\Controllers\Predmeti\PredmetiController.js" />
     <Content Include="app\Controllers\Korisnik\RegisterController.js" />
+    <Content Include="app\Controllers\Predmeti\ShowPredmetiController.js" />
     <Content Include="app\js\md5.js" />
     <Content Include="app\js\ngStorage.js" />
     <Content Include="app\Services\AuthenticationService.js" />
@@ -224,7 +228,11 @@
     <Content Include="app\Views\Korisnik\PotvrdaKorisnikaOdbijeno.html" />
     <Content Include="app\Views\Korisnik\PotvrdaKorisnikaPotvrdeno.html" />
     <Content Include="app\Views\Korisnik\Register.html" />
+    <Content Include="app\Views\Predmeti\AddPredmeti.html" />
+    <Content Include="app\Views\Predmeti\DeletePredmeti.html" />
+    <Content Include="app\Views\Predmeti\EditPredmeti.html" />
     <Content Include="app\Views\Predmeti\IndexPredmeti.html" />
+    <Content Include="app\Views\Predmeti\ShowPredmeti.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DropDownMenu.css" />
@@ -1052,6 +1060,7 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\Controllers\Ocjene\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

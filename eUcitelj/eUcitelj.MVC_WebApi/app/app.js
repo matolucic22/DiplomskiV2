@@ -68,6 +68,51 @@ app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProv
                 }
             }
 
+        }).state('predmetiIndex', {
+            url: '/predmeti/predmetiIndex',
+            controller: 'PredmetiController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Predmeti/IndexPredmeti.html'
+                }
+            }
+
+        }).state('editPredmeti', {
+            url: '/predmeti/predmetiEdit/:PrId',
+            controller: 'EditPredmetiController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Predmeti/EditPredmeti.html'
+                }
+            }
+
+        }).state('addPredmeti', {
+            url: '/predmeti/predmetiAdd',
+            controller: 'AddPredmetiController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Predmeti/AddPredmeti.html'
+                }
+            }
+
+        }).state('deletePredmeti', {
+            url: '/predmeti/predmetiDel/:PrId',
+            controller: 'DeletePredmetiController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Predmeti/DeletePredmeti.html'
+                }
+            }
+
+        }).state('showPredmeti', {
+            url: '/predmeti/predmetiShow',
+            controller: 'ShowPredmetiController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Predmeti/ShowPredmeti.html'
+                }
+            }
+
         });
 });
 

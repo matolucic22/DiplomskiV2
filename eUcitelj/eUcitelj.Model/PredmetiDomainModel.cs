@@ -15,7 +15,7 @@ namespace eUcitelj.Model
     {
         public string Ime_predmeta { get; set; }
 
-        public Guid KorisnikId { get; set; }
+        //public Guid KorisnikId { get; set; }
         
         public Guid PredmetiId { get; set; }
 
