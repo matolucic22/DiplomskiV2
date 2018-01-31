@@ -10,7 +10,7 @@ namespace eUcitelj.DAL.Common
     public interface IPredmeti
     {
         Guid PredmetiId { get; set; }
-      //  Guid KorisnikId { get; set; }//Koji korisnik je upisao taj predmet
+        Guid KorisnikId { get; set; }//Koji korisnik je upisao taj predmet
         String Ime_predmeta { get; set; }
 
         //ICollection<IOcjene> Ocjene { get; set; }//1 predmet moze imati vise ocijena

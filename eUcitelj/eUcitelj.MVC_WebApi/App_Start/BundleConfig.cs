@@ -18,16 +18,17 @@ namespace eUcitelj.MVC_WebApi
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                 "~/Scripts/angular.js", 
                 "~/Scripts/angular-ui-router.js",
-                //"~/Scripts/angular.min.js",
                 "~/Scripts/angular-local-storage.js",
                 "~/app/js/md5.js",
                 "~/app/js/ngStorage.js",
+                "~/app/js/unique.js",
                 "~/Scripts/dirPagination.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/aplikacijaApp").Include(
                "~/app/app.js",
                "~/app/Controllers/Predmeti/*Controller.js",
                "~/app/Controllers/Korisnik/*Controller.js",
+               "~/app/Controllers/Ocjene/*Controller.js",
                "~/app/Controllers/*Controller.js",
                "~/app/Services/*Service.js"));
 

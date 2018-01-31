@@ -68,6 +68,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
             {
                 
                 addObj.PredmetiId = Guid.NewGuid();
+               // addObj.KorisnikId = Guid.NewGuid();
                 var response= await PredmetiService.Add(Mapper.Map<IPredmetiDomainModel>(addObj));
                 return Request.CreateResponse(HttpStatusCode.OK, response);
 

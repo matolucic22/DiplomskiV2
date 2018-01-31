@@ -1,4 +1,4 @@
-﻿var app = angular.module('app', ['ui.router', 'angularUtils.directives.dirPagination', 'angular-md5', 'LocalStorageModule', 'ngStorage']);
+﻿var app = angular.module('app', ['ui.router', 'angularUtils.directives.dirPagination', 'angular-md5', 'LocalStorageModule', 'ngStorage', 'ui.filters']);
 
 app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider)
 {
@@ -78,7 +78,7 @@ app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProv
             }
 
         }).state('editPredmeti', {
-            url: '/predmeti/predmetiEdit/:PrId',
+            url: '/predmeti/predmetiEdit/:PrIme',
             controller: 'EditPredmetiController',
             views: {
                 "root": {
@@ -96,7 +96,7 @@ app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProv
             }
 
         }).state('deletePredmeti', {
-            url: '/predmeti/predmetiDel/:PrId',
+            url: '/predmeti/predmetiDel/:PrIme',
             controller: 'DeletePredmetiController',
             views: {
                 "root": {
@@ -110,6 +110,49 @@ app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProv
             views: {
                 "root": {
                     templateUrl: 'app/Views/Predmeti/ShowPredmeti.html'
+                }
+            }
+
+        }).state('unosOcjena', {
+            url: '/ocjene/ocjeneUnos',
+            controller: 'UnosOcjenaController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/UnosOcjena.html'
+                }
+            }
+
+        }).state('unosOcjenaUcenik', {
+            url: '/ocjene/ocjeneUnosUcenik/:KoId',
+            controller: 'UnosOcjenaUcenikController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/UnosOcjenaUcenik.html'
+                }
+            }
+
+        }).state('unosOcjenaUcenikPredmet', {
+            url: '/ocjene/ocjeneUnosUcenik/:KoId/:UcPrId',
+            controller: 'UnosOcjenaUcenikPredmetiController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/UnosOcjenaUcenikPredmeti.html'
+                }
+            }
+
+        }).state('kontakt', {
+            url: '/kontakt',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Kontakt.html'
+                }
+            }
+
+        }).state('oAplikaciji', {
+            url: '/oAplikaciji',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/OAplikaciji.html'
                 }
             }
 

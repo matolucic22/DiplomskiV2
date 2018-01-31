@@ -95,5 +95,37 @@ namespace eUcitelj.Reporsitory
                 throw ex;
             }
         }
+
+        public async Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnikId()
+        {
+            try
+            {
+                var response = await Reporsitory.GetQueryable<Korisnik>().ToListAsync();//.Where(a=>a.Role == "ucenik").Select(a => new Korisnik { KorisnikId = a.KorisnikId }).ToListAsync();
+                var Ids = response.Select(a => new Korisnik { KorisnikId = a.KorisnikId, Role = a.Role }).Where(a => a.Role == "ucenik").ToList();
+                return Mapper.Map<IEnumerable<IKorisnikDomainModel>>(Ids);
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //public async Task<IEnumerable<IKorisnikDomainModel>> GetAllUcenici()
+        //{
+        //    try
+        //    {
+
+        //        var response = await Reporsitory.GetQueryable<Korisnik>().ToListAsync();
+        //        var ucenici = response.Select(a => new Korisnik { Role = a.Role }).Where<Korisnik>(Role == 'Ucenik'|| Role == 'ucenik').ToList();
+        //        return Mapper.Map<IEnumerable<IKorisnikDomainModel>>(ucenici);
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //}
     }
 }

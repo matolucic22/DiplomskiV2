@@ -16,5 +16,7 @@ namespace eUcitelj.Reporsitory.Common
         Task<int> DeleteAsync(Guid Id);
         Task<IKorisnikDomainModel> GetByUsername(string korisnicko_ime);
         Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnicko_ime();
+        Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnikId();
+        //Task<IKorisnikDomainModel> GetAllKorisnikId();
     }
 }

@@ -51,5 +51,10 @@ namespace eUcitelj.Service
             return await KorisnikGenericReporsitory.GetAllKorisnicko_ime();
         }
 
+        public async Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnikId()
+        {
+            return await KorisnikGenericReporsitory.GetAllKorisnikId();
+        }
+
     }
 }

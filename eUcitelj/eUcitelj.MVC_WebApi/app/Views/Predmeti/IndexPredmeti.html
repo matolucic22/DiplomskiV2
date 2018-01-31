@@ -24,10 +24,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr dir-paginate="pr in predmeti | itemsPerPage:5 | filter:search | orderBy:sortKey:reverse">
+            <tr dir-paginate="pr in predmeti | itemsPerPage:5 | filter:search | orderBy:sortKey:reverse | unique:'Ime_predmeta'">
                 <td>{{pr.Ime_predmeta}}</td>
-                <td><a ui-sref="editPredmeti({PrId: pr.PredmetiId})">Uredi</a>
-                    <a ui-sref="deletePredmeti({PrId: pr.PredmetiId})">Obriši</a>
+                <td><a ui-sref="editPredmeti({PrIme: pr.Ime_predmeta})">Uredi</a>
+                    <a ui-sref="deletePredmeti({PrIme: pr.Ime_predmeta})">Obriši</a>
                 </td>
             </tr>
         </tbody>

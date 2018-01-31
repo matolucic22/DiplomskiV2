@@ -5,8 +5,6 @@
         Korisnicko_ime: undefined
     };
 
-    
-
     $http.get('/api/Korisnik/getKI').then(function (response) {
 
         provjeraKI = response.data;
@@ -28,7 +26,7 @@
         };      
 
         for (var i = 0; i < provjeraKI.length; i++) {
-            if (provjeraKI[i].Korisnicko_ime == addObj.Korisnicko_ime) {//!!!!!!!!!!!!!
+            if (provjeraKI[i].Korisnicko_ime == addObj.Korisnicko_ime) {//!!!!!!!!!!!!!!!!!!!!!!!!!
                counter++;
                 
                 return window.alert("Unešeno korisničko ime već postoji u bazi.");
@@ -49,12 +47,12 @@
         }
         else {
             addObj.Password = md5.createHash($scope.Password || '');
+
+            //upis korisnika u bazu
             $http.post('/api/Korisnik/addK', addObj)
                 .then(function (data) {
                     $scope.response = data;
-                    modal.style.display = "block";
-                    
-                    
+                    modal.style.display = "block";                   
                 }
             , function (jqXHR) {
 

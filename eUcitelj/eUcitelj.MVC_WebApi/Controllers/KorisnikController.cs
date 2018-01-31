@@ -156,8 +156,6 @@ namespace eUcitelj.MVC_WebApi.Controllers
                                      
 
                 };
-                 //ViewBag.usersRole = Role;
-
 
                 return Request.CreateResponse(HttpStatusCode.OK, tokenResponse);
                 
@@ -179,6 +177,21 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 throw ex;
             }
 
+        }
+
+        [HttpGet]
+        [Route("getAllKorId")]
+        public async Task<HttpResponseMessage> GetAllKorisnikId()
+        {
+            try
+            {
+                var response = Mapper.Map<IEnumerable<KorisnikViewModel>>(await KorisnikService.GetAllKorisnikId());
+                return Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
         }
 
     }

@@ -19,10 +19,7 @@ namespace eUcitelj.Reporsitory
         public Reporsitory(IeUciteljContext context)//konstruktor da svakim pokretanjem stvori objekt od contexta
         {
             this.Context = context;
-        }
-
-
-        
+        }      
 
         public async Task<int> AddAsync<T>(T addObj) where T : class
         {           

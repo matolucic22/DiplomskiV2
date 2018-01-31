@@ -15,7 +15,7 @@ namespace eUcitelj.DAL.Models
 
         public Guid PredmetiId { get; set; }
         
-       // public Guid KorisnikId { get; set; }
+        public Guid KorisnikId { get; set; }
 
         public string Ime_predmeta { get; set; }
 
@@ -24,7 +24,7 @@ namespace eUcitelj.DAL.Models
 
         public virtual ICollection<Kviz> Kviz { get; set; }//1 predmet moze imati vise kvizova
 
-        //[ForeignKey("KorisnikId")]
-        //public virtual Korisnik Korisnik { get; set; }//poziva jednog korisnika di je npr id=1; - 1 predmet ima vise korisnika. Zato što svaki model ima 1 make m
+        [ForeignKey("KorisnikId")]
+        public virtual Korisnik Korisnik { get; set; }//poziva jednog korisnika di je npr id=1; - 1 predmet ima vise korisnika. Zato što svaki model ima 1 make m
     }
 }

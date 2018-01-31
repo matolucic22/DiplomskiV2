@@ -16,5 +16,7 @@ namespace eUcitelj.Service.Common
         Task<int> Delete(Guid Id);
         Task<IKorisnikDomainModel> FindByUserName(string korisnicko_ime);
         Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnicko_ime();
+        Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnikId();
+        //Task<IKorisnikDomainModel> GetAllKorisnikId();
     }
 }
