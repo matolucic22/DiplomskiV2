@@ -59,6 +59,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
             try
             {
                 addObj.OcjeneId = Guid.NewGuid();
+                addObj.DatumUpisa = DateTime.Now.Date;
                 var response = await OcjeneService.Add(Mapper.Map<IOcjeneDomainModel>((addObj)));
                 return Request.CreateResponse(HttpStatusCode.OK, response);
 

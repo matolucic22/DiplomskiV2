@@ -136,7 +136,61 @@ app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProv
             controller: 'UnosOcjenaUcenikPredmetiController',
             views: {
                 "root": {
-                    templateUrl: 'app/Views/Ocjene/UnosOcjenaUcenikPredmeti.html'
+                    templateUrl: 'app/Views/Ocjene/UnosOcjenaUcenikOcjena.html'
+                }
+            }
+
+        }).state('pregledOcjena', {
+            url: '/ocjene/ocjenePregled',
+            controller: 'UnosOcjenaController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/PregledOcjena.html'
+                }
+            }
+
+        }).state('pregledOcjenaUcenik', {
+            url: '/ocjene/ocjenePregledUcenik/:KoId',
+            controller: 'UnosOcjenaUcenikController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/PregledOcjenaUcenik.html'
+                }
+            }
+
+        }).state('pregledOcjenaUcenikPredmet', {
+            url: '/ocjene/ocjenePregledUcenik/:KoId/:UcPrId',
+            controller: 'PregledOcjenaUcenikPredmetiController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/PregledOcjenaUcenikOcjena.html'
+                }
+            }
+
+        }).state('brisanjeOcjena', {
+            url: '/ocjene/ocjeneBrisanje',
+            controller: 'UnosOcjenaController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/BrisanjeOcjena.html'
+                }
+            }
+
+        }).state('brisanjeOcjenaUcenik', {
+            url: '/ocjene/ocjeneBrisanjeUcenik/:KoId',
+            controller: 'UnosOcjenaUcenikController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/BrisanjeOcjenaUcenik.html'
+                }
+            }
+
+        }).state('brisanjeOcjenaUcenikPredmet', {
+            url: '/ocjene/ocjeneBrisanjeUcenik/:KoId/:UcPrId',
+            controller: 'BrisanjeOcjenaUcenikPredmetiController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/BrisanjeOcjenaUcenikOcjena.html'
                 }
             }
 

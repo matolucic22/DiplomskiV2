@@ -11,6 +11,9 @@ namespace eUcitelj.DAL.Common
         Guid OcjeneId { get; set; }
         Guid PredmetiId { get; set; }
         int Ocjena { get; set; }
+        string Opis { get; set; }
+        DateTime DatumOcjene { get; set; }
+        DateTime DatumUpisa { get; set; }
         //IPredmeti Predmeti { get; set; }
     }
 }

@@ -13,6 +13,11 @@ namespace eUcitelj.DAL.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid OcjeneId { get; set; }
         public int Ocjena { get; set; }
+        public string Opis { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime DatumOcjene { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime DatumUpisa { get; set; }
         public Guid PredmetiId { get; set; }
         [ForeignKey("PredmetiId")]
         public Predmeti Predmeti { get; set; }

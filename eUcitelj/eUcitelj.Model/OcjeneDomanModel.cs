@@ -15,6 +15,11 @@ namespace eUcitelj.Model
         public Guid OcjeneId { get; set; }       
         public Guid PredmetiId { get; set; }
         public int Ocjena { get; set; }
+        public string Opis { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime DatumOcjene { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime DatumUpisa { get; set; }
 
         //[ForeignKey("PredmetiId")]
         //public virtual IPredmeti Predmeti { get; set; }

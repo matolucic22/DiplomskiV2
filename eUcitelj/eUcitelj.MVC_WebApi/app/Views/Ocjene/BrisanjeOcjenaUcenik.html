@@ -1,5 +1,5 @@
 ﻿<div class="container" ng-controller="UnosOcjenaUcenikController">
-    <h1>Odaberite predmet za upis ocjene</h1>
+    <h1>Odaberite predmet za obrisati ocjene</h1>
     <br />
 
     <form class="form-inline">
@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             <tr dir-paginate="pr in korisnikP | itemsPerPage:5 | filter:search | orderBy:sortKey:reverse">
-                <td><a ui-sref="unosOcjenaUcenikPredmet({UcPrId: pr.PredmetiId})">{{pr.Ime_predmeta}}</a></td>
+                <td><a ui-sref="brisanjeOcjenaUcenikPredmet({UcPrId: pr.PredmetiId})">{{pr.Ime_predmeta}}</a></td>
             </tr>
         </tbody>
     </table>

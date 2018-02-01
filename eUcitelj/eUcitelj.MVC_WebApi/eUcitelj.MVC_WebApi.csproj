@@ -213,6 +213,8 @@
     <Content Include="app\Controllers\Korisnik\LoginController.js" />
     <Content Include="app\Controllers\Korisnik\PotvrdaKorisnikaController.js" />
     <Content Include="app\Controllers\navbarController.js" />
+    <Content Include="app\Controllers\Ocjene\BrisanjeOcjenaUcenikPredmetiController.js" />
+    <Content Include="app\Controllers\Ocjene\PregledOcjenaUcenikPredmetiController.js" />
     <Content Include="app\Controllers\Ocjene\UnosOcjenaController.js" />
     <Content Include="app\Controllers\Ocjene\UnosOcjenaUcenikController.js" />
     <Content Include="app\Controllers\Ocjene\UnosOcjenaUcenikPredmetiController.js" />
@@ -234,8 +236,15 @@
     <Content Include="app\Views\Korisnik\PotvrdaKorisnikaPotvrdeno.html" />
     <Content Include="app\Views\Korisnik\Register.html" />
     <Content Include="app\Views\OAplikaciji.html" />
+    <Content Include="app\Views\Ocjene\BrisanjeOcjena.html" />
+    <Content Include="app\Views\Ocjene\BrisanjeOcjenaUcenik.html" />
+    <Content Include="app\Views\Ocjene\BrisanjeOcjenaUcenikOcjena.html" />
+    <Content Include="app\Views\Ocjene\PregledOcjena.html" />
+    <Content Include="app\Views\Ocjene\PregledOcjenaUcenik.html" />
+    <Content Include="app\Views\Ocjene\PregledOcjenaUcenikOcjena.html" />
     <Content Include="app\Views\Ocjene\UnosOcjena.html" />
     <Content Include="app\Views\Ocjene\UnosOcjenaUcenik.html" />
+    <Content Include="app\Views\Ocjene\UnosOcjenaUcenikOcjena.html" />
     <Content Include="app\Views\Predmeti\AddPredmeti.html" />
     <Content Include="app\Views\Predmeti\DeletePredmeti.html" />
     <Content Include="app\Views\Predmeti\EditPredmeti.html" />
