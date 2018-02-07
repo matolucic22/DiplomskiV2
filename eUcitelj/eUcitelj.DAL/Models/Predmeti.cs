@@ -18,7 +18,7 @@ namespace eUcitelj.DAL.Models
         public Guid KorisnikId { get; set; }
 
         public string Ime_predmeta { get; set; }
-
+        public int Bodovi_kvizova { get; set; }
 
         public virtual ICollection<Ocjene> Ocjene { get; set; }//1 predmet moze imati vise ocijena
 

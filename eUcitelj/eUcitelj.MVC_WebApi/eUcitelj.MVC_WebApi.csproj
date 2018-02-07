@@ -212,6 +212,12 @@
     <Content Include="app\Controllers\Korisnik\HomeController.js" />
     <Content Include="app\Controllers\Korisnik\LoginController.js" />
     <Content Include="app\Controllers\Korisnik\PotvrdaKorisnikaController.js" />
+    <Content Include="app\Controllers\Kviz\DodajKvizController.js" />
+    <Content Include="app\Controllers\Kviz\DohvatiPredmeteController.js" />
+    <Content Include="app\Controllers\Kviz\ObrisiKvizController.js" />
+    <Content Include="app\Controllers\Kviz\PopraviKvizController.js" />
+    <Content Include="app\Controllers\Kviz\PregledajKvizController.js" />
+    <Content Include="app\Controllers\Kviz\RjesavajKvizController.js" />
     <Content Include="app\Controllers\navbarController.js" />
     <Content Include="app\Controllers\Ocjene\BrisanjeOcjenaUcenikPredmetiController.js" />
     <Content Include="app\Controllers\Ocjene\PregledOcjenaUcenikPredmetiController.js" />
@@ -235,6 +241,13 @@
     <Content Include="app\Views\Korisnik\PotvrdaKorisnikaOdbijeno.html" />
     <Content Include="app\Views\Korisnik\PotvrdaKorisnikaPotvrdeno.html" />
     <Content Include="app\Views\Korisnik\Register.html" />
+    <Content Include="app\Views\Kviz\DodajKviz.html" />
+    <Content Include="app\Views\Kviz\DohvatiPredmete.html" />
+    <Content Include="app\Views\Kviz\DohvatiPredmetePregled.html" />
+    <Content Include="app\Views\Kviz\DohvatiPredmeteRjesavanje.html" />
+    <Content Include="app\Views\Kviz\ObrisiKviz.html" />
+    <Content Include="app\Views\Kviz\PopraviKviz.html" />
+    <Content Include="app\Views\Kviz\RjesavajKviz.html" />
     <Content Include="app\Views\OAplikaciji.html" />
     <Content Include="app\Views\Ocjene\BrisanjeOcjena.html" />
     <Content Include="app\Views\Ocjene\BrisanjeOcjenaUcenik.html" />
@@ -250,6 +263,7 @@
     <Content Include="app\Views\Predmeti\EditPredmeti.html" />
     <Content Include="app\Views\Predmeti\IndexPredmeti.html" />
     <Content Include="app\Views\Predmeti\ShowPredmeti.html" />
+    <Content Include="app\Views\Kviz\PregledajKviz.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DropDownMenu.css" />

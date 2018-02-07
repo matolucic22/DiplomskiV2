@@ -81,7 +81,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Nije pronađen trazeni kviz.");
                 }
-                if (updateK.Odg1 == null || updateK.Odg2 == null || updateK.Odg3 == null || updateK.Bodovi <1 || updateK.Bodovi>5 || updateK.Pitanje == null || updateK.Tocan_odgovor == null)
+                if (updateK.Odg1 == null || updateK.Odg2 == null || updateK.Odg3 == null || updateK.Pitanje == null || updateK.Tocan_odgovor == null)
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Greska u unosu!");
                 }
@@ -90,7 +90,7 @@ namespace eUcitelj.MVC_WebApi.Controllers
                     toBeUpdated.Odg1 = updateK.Odg1;
                     toBeUpdated.Odg2 = updateK.Odg2;
                     toBeUpdated.Odg3 = updateK.Odg3;
-                    toBeUpdated.Bodovi = updateK.Bodovi;
+                    //toBeUpdated.Bodovi = 0;
                     toBeUpdated.Pitanje = updateK.Pitanje;
                     toBeUpdated.Tocan_odgovor = updateK.Tocan_odgovor;
                     

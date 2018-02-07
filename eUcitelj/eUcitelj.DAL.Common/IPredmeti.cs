@@ -12,6 +12,7 @@ namespace eUcitelj.DAL.Common
         Guid PredmetiId { get; set; }
         Guid KorisnikId { get; set; }//Koji korisnik je upisao taj predmet
         String Ime_predmeta { get; set; }
+        int Bodovi_kvizova { get; set; }
 
         //ICollection<IOcjene> Ocjene { get; set; }//1 predmet moze imati vise ocijena
 

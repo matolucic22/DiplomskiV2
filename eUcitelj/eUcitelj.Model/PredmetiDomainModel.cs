@@ -18,10 +18,11 @@ namespace eUcitelj.Model
         public Guid KorisnikId { get; set; }
         
         public Guid PredmetiId { get; set; }
+        public int Bodovi_kvizova { get; set; }
 
         public virtual ICollection<IOcjeneDomainModel> Ocjene { get; set; }//1 predmet moze imati vise ocijena
 
-        // public virtual ICollection<IKvizDomainModel> Kviz { get; set; }//1 predmet moze imati vise ocijena
+        public virtual ICollection<IKvizDomainModel> Kviz { get; set; }//1 predmet moze imati vise ocijena
         //[ForeignKey("KorisnikId")]
         //public virtual IKorisnik Korisnik { get; set; }//poziva jednog korisnika di je npr id=1; - 1 predmet ima vise korisnika. Zato što svaki model ima 1 make m
     }

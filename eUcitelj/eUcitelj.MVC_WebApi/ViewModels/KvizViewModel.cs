@@ -15,6 +15,6 @@ namespace eUcitelj.MVC_WebApi.ViewModels
         public String Odg3 { get; set; }
         public String Tocan_odgovor { get; set; }
         public int Bodovi { get; set; }
-        public virtual PredmetiViewModel Predmeti { get; set; }
+       // public virtual PredmetiViewModel Predmeti { get; set; }
     }
 }

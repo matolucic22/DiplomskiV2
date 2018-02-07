@@ -29,6 +29,7 @@ namespace eUcitelj.MVC_WebApi
                "~/app/Controllers/Predmeti/*Controller.js",
                "~/app/Controllers/Korisnik/*Controller.js",
                "~/app/Controllers/Ocjene/*Controller.js",
+               "~/app/Controllers/Kviz/*Controller.js",
                "~/app/Controllers/*Controller.js",
                "~/app/Services/*Service.js"));
 

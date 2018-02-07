@@ -194,6 +194,66 @@ app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProv
                 }
             }
 
+        }).state('dohvatiPredmete', {
+            url: '/kviz/dohvatiPredmete ',   
+            controller: 'DohvatiPredmeteController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Kviz/DohvatiPredmete.html'
+                }
+            }
+
+        }).state('dodajKviz', {
+            url: '/kviz/dohvatiPredmete/dodajKviz/:UcPrId',
+            controller: 'DodajKvizController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Kviz/DodajKviz.html'
+                }
+            }
+
+        }).state('dohvatiPredmeteZaPregled', {
+            url: '/kviz/dohvatiPredmeteZaPregled ',
+            controller: 'DohvatiPredmeteController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Kviz/DohvatiPredmetePregled.html'
+                }
+            }
+
+        }).state('pregledajKviz', {
+            url: '/kviz/dohvatiPredmete/pregledajKviz/:UcPrId',
+            controller: 'PregledajKvizController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Kviz/PregledajKviz.html'
+                }
+            }
+
+        }).state('popraviKviz', {
+            url: '/kviz/dohvatiPredmete/popraviKviz/:KvizId',
+            controller: 'PopraviKvizController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Kviz/PopraviKviz.html'
+                }
+            }
+        }).state('dohvatiPredmeteZaRijesavanje', {
+            url: '/kviz/dohvatiPredmeteZaR',
+            controller: 'DohvatiPredmeteController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Kviz/DohvatiPredmeteRjesavanje.html'
+                }
+            }
+        }).state('rjesavajKviz', {
+            url: '/kviz/rjesavajKviz/:UcPrId',
+            controller: 'RjesavajKvizController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Kviz/RjesavajKviz.html'
+                }
+            }
         }).state('kontakt', {
             url: '/kontakt',
             views: {

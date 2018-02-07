@@ -31,7 +31,7 @@ namespace eUcitelj.DAL.Models
 
         public string Tocan_odgovor { get; set; }
 
-        [ForeignKey("PredmetiId")]
-        public virtual Predmeti Predmeti { get; set; }
+        //[ForeignKey("PredmetiId")]
+        //public virtual Predmeti Predmeti { get; set; }
     }
 }

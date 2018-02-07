@@ -57,10 +57,8 @@
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <div class="dropdown-content">
-                                    <a href="#">Dodaj kviz</a>
-                                    <a href="#">Pregled kvizova</a>
-                                    <a href="#">Popravi</a>
-                                    <a href="#">Obriši</a>
+                                    <a ui-sref="dohvatiPredmete">Dodaj kviz</a>
+                                    <a ui-sref="dohvatiPredmeteZaPregled">Pregled i upravljanje kvizovima</a>
                                 </div>
                             </div>
                         </li>
@@ -73,7 +71,6 @@
                                 <div class="dropdown-content">
                                     <a ui-sref="unosOcjena">Dodaj ocjenu uceniku</a>
                                     <a ui-sref="pregledOcjena">Pregled ocjena</a>
-                                    @*<a href="#">Popravi unos</a>*@
                                     <a ui-sref="brisanjeOcjena">Obriši unos</a>
                                 </div>
                             </div>
@@ -90,8 +87,8 @@
                 <div class="navbar-collapse collapse" ng-if="ucenik()">
                     <ul class="nav navbar-nav">
                         <li><a ui-sref="home">Početna</a></li>
-                        <li><a ui-sref="">Pregled ocjena</a></li>
-                        <li><a ui-sref="">Kvizovi</a></li>
+                        <li><a ui-sref="pregledOcjena">Pregled ocjena</a></li>
+                        <li><a ui-sref="dohvatiPredmeteZaRijesavanje">Kvizovi</a></li>
                         <li><a ui-sref="oAplikaciji">O aplikaciji</a></li>
                         <li><a ui-sref="kontakt">Kontakt</a></li>
                     </ul>
@@ -104,7 +101,7 @@
                 <div class="navbar-collapse collapse" ng-if="roditelj()">
                     <ul class="nav navbar-nav">
                         <li><a ui-sref="home">Početna</a></li>
-                        <li><a ui-sref="">Pregled ocjena učenika</a></li>
+                        <li><a ui-sref="pregledOcjena">Pregled ocjena učenika</a></li>
                         <li><a ui-sref="oAplikaciji">O aplikaciji</a></li>
                         <li><a ui-sref="kontakt">Kontakt</a></li>
                     </ul>
