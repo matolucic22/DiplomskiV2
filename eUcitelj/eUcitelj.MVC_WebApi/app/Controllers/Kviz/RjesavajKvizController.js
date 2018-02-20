@@ -1,12 +1,16 @@
 ﻿app.controller('RjesavajKvizController', function ($scope, $http, $stateParams, $window) {
     idPredmet = $stateParams.UcPrId;
     var Predmet = [];
-    //var TO = [];
-    //$scope.Pitanja = [];
     
     $http.get('api/Predmeti/getP?id=' + idPredmet).then(function (response) {
         Predmet = response.data;
         $scope.Pitanja = Predmet.Kviz;
+        if($scope.Pitanja.length == 0)
+        {
+            $window.alert("Pitanja nisu dodana.");
+            var button = document.getElementById("button");
+            button.parentNode.removeChild(button);
+        }
         //TO = $scope.Pitanja[0].Tocan_odgovor;
         // $window.alert(TO);
         //for (var i = 0; i < $scope.Pitanja.length; i++) {

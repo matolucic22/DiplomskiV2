@@ -28,8 +28,10 @@ namespace eUcitelj.DAL.Models
     {
         //public Korisnik()
         //{
-        //   // public virtual ICollection<Predmeti> Predmeti { get; set; }//1 korisnit moze biti upisan na vise predmeta
+        //    // public virtual ICollection<Predmeti> Predmeti { get; set; }//1 korisnit moze biti upisan na vise predmeta
         //    //this.Predmeti = new HashSet<Predmeti>();
+        //    public virtual ICollection<Ucenici> Ucenici { get; set; }//1 korisnit moze biti upisan na vise predmeta
+        //    //this.Ucenici = new HashSet<Ucenici>();
         //}
 
 
@@ -48,6 +50,7 @@ namespace eUcitelj.DAL.Models
 
         public string Role { get; set; }
 
-        public virtual ICollection<Predmeti> Predmeti { get; set; }//1 korisnit moze biti upisan na vise predmeta
+        public virtual ICollection<Predmeti> Predmeti { get; set; }//1 korisnik moze biti upisan na vise predmeta
+        public virtual ICollection<Ucenici> Ucenici { get; set; }//1 korisnik logiran kao roditelj moze imati vise ucenika
     }
 }

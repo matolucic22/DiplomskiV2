@@ -17,5 +17,6 @@ namespace eUcitelj.Model.Common
         String Role { get; set; }
         String Potvrda { get; set; }
         ICollection<IPredmetiDomainModel> Predmeti { get; set; }
+        ICollection<IUceniciDomainModel> Ucenici { get; set; }
     }
 }

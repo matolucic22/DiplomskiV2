@@ -4,6 +4,10 @@
         KorisnikId:undefined
     };
 
+    var Predmeti = [];
+
+    var PredmetiI = [];
+
     $http.get('/api/Korisnik/getAllKorId').then(function (response) {
         KorisnikIds = response.data;
 
@@ -28,25 +32,116 @@
                 window.alert("Greška prilikom stvaranja testnog korisnika.");
             });
      }
-            
-            
+                  
 
     });
         
 
-
     $scope.addPredmeti = function () {
-        for (i = 0; i < KorisnikIds.length; i++) {
-            var objAdd = {
-                KorisnikId: KorisnikIds[i].KorisnikId,
-                Ime_predmeta: $scope.Ime_predmeta
-            };
 
-            $http.post('api/Predmeti/addP', objAdd).then(function (data) {
-                $scope.response = data;
-            });
-        }
-        $window.alert("Dodano");
-        $location.path('/predmeti/predmetiIndex');
+        $http.get('api/Predmeti/getAllP').then(function (response) {
+            Predmeti = response.data;
+            for (i = 0; i < Predmeti.length; i++)
+            {
+                PredmetiI[i] = Predmeti[i].Ime_predmeta;
+            }
+
+            
+            if (PredmetiI.indexOf($scope.Ime_predmeta) == -1) {
+                for (i = 0; i < KorisnikIds.length; i++) {
+                    var objAdd = {
+                        KorisnikId: KorisnikIds[i].KorisnikId,
+                        Ime_predmeta: $scope.Ime_predmeta
+                    };
+
+                    $http.post('api/Predmeti/addP', objAdd).then(function (data) {
+                        $scope.response = data;
+                        //$window.alert("Dodano");
+                        $location.path('/predmeti/predmetiIndex');
+                    });
+                }
+            }else
+            {
+                $window.alert("Predmet već postoji u bazi.");
+            }
+        });
+
+        //$http.get('api/Korisnik/getK?Id='+KorisnikIds[0].KorisnikId).then(function (response) {
+        //    Korisnik1 = response.data;
+        //    Korisnik2 = Korisnik1.PredmetiId;
+        //   // Predmeti = Korisnik2.Ime_predmeta;
+        //    $http.get('api/Predmeti/getP?Id=' + Korisnik2).then(function (response) {
+
+        //        Predmeti = response.data;
+        //        if (Predmeti.indexOf($scope.Ime_predmeta) != -1) {
+        //            $window.alert("Sadrzi");
+        //        }
+
+        //    });
+
+
+            
+
+
+
+        //    if (Predmeti.length == 0)
+        //    {
+                //for (i = 0; i < KorisnikIds.length; i++) {
+                //    var objAdd = {
+                //        KorisnikId: KorisnikIds[i].KorisnikId,
+                //        Ime_predmeta: $scope.Ime_predmeta
+                //    };
+
+                //    $http.post('api/Predmeti/addP', objAdd).then(function (data) {
+                //        $scope.response = data;
+                //        //$window.alert("Dodano");
+                //        $location.path('/predmeti/predmetiIndex');
+                //    });
+                //}
+        //}
+        //else
+        //    {
+        //    for (var j = 0; j < Predmeti.length; j++)
+        //    {
+        //        try{
+        //            if( Predmeti[j].Ime_predmeta==$scope.Ime_predmeta)
+        //            {
+        //                $window.alert("Predmet sa tim imenom već postoji");
+
+        //                //$location.path('/predmeti/predmetiIndex');
+                        
+        //                //return $state.go('home', {}, { reload: true });
+        //                //$window.reload();//NAPRAVI BREAK
+        //                throw Error();
+        //                // return false;
+        //                break;
+        //                //$(selector).stop(stopAll, goToEnd);
+                        
+        //            }else
+        //            {
+        //                for (i = 0; i < KorisnikIds.length; i++) {
+        //                    var objAdd = {
+        //                        KorisnikId: KorisnikIds[i].KorisnikId,
+        //                        Ime_predmeta: $scope.Ime_predmeta
+        //                    };
+
+        //                    $http.post('api/Predmeti/addP', objAdd).then(function (data) {
+        //                        $scope.response = data;
+        //                        // $window.alert("Dodano");
+        //                        $location.path('/predmeti/predmetiIndex');
+        //                    });
+        //                }
+        //            }
+        //        }
+        //        catch (Exception)
+        //        {
+        //            $window.alert("Operacija prekinuta");
+        //            break;
+        //        }
+
+        //        }
+        //    }
+        //});
+       
     };
 });

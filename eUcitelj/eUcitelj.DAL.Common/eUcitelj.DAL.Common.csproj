@@ -54,6 +54,7 @@
     <Compile Include="IKviz.cs" />
     <Compile Include="IOcjene.cs" />
     <Compile Include="IPredmeti.cs" />
+    <Compile Include="IUcenici.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

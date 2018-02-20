@@ -1,8 +1,7 @@
-﻿app.controller('PotvrdaKorisnikaController', function ($scope, $http, $stateParams, $window, $location) { 
+﻿app.controller('PotvrdaKorisnikaController', function ($scope, $http, $stateParams, $window, $location, $rootScope) {
     $scope.korisnici = [];
     $scope.myVal = [];
-    // $scope.predmeti = [];
-
+   
 
     $http.get('/api/Korisnik/getAllK').then(function (response) {
 
@@ -14,39 +13,73 @@
     });
 
 
-    $scope.Da = function (KorisnikId) {               
+    $scope.Da = function (KorisnikId) {
         
+        $rootScope.KorisnikId = KorisnikId;
         var rola = prompt("Upišite ulogu potvrđenog korisnika (Ucitelj/Ucenik/Roditelj):", "");
         var rolaLower = rola.toString().toLowerCase();
         
         if (rolaLower == "ucitelj" || rolaLower == "ucenik" || rolaLower == "roditelj") {
-            $http.get('/api/Korisnik/getK?id=' + KorisnikId).then(function (response) {
-                var Korisnik = response.data;
-                Korisnik2 = {
-                    KorisnikId: Korisnik.KorisnikId,
-                    Ime_korisnika: Korisnik.Ime_korisnika,
-                    Prezime_korisnika: Korisnik.Prezime_korisnika,
-                    Korisnicko_ime: Korisnik.Korisnicko_ime,
-                    Password: Korisnik.Password,
-                    Potvrda: "Da",
-                    Role: rola
-                };
+            if (rolaLower == "roditelj") {
 
-                $http.put('api/Korisnik/updateK', Korisnik2).then(function (data) {
-                    $window.alert("Promijenjeno");
-                    $http.get('/api/Korisnik/getAllK').then(function (response) {
-                        $scope.korisnici = response.data;
+                $location.path('/korisnik/dodajUcenikeRoditelju');
+                $http.get('/api/Korisnik/getK?id=' + KorisnikId).then(function (response) {//prebaci U IDUCI CONT
+                    var Korisnik = response.data;
+                    Korisnik2 = {
+                        KorisnikId: Korisnik.KorisnikId,
+                        Ime_korisnika: Korisnik.Ime_korisnika,
+                        Prezime_korisnika: Korisnik.Prezime_korisnika,
+                        Korisnicko_ime: Korisnik.Korisnicko_ime,
+                        Password: Korisnik.Password,
+                        Potvrda: "Da",
+                        Role: rola
+                    };
+
+                    $http.put('api/Korisnik/updateK', Korisnik2).then(function (data) {
+                        $window.alert("Promijenjeno");
+                        $http.get('/api/Korisnik/getAllK').then(function (response) {
+                            $scope.korisnici = response.data;
+                        }, function () {
+                            console.log("Greška prilikom preuzimanja korisnika iz baze.");
+                        });
                     }, function () {
-                        console.log("Greška prilikom preuzimanja korisnika iz baze.");
+                        console.log("Greška prilikom postavljanja promjene u bazu.");
                     });
+
                 }, function () {
-                    console.log("Greška prilikom postavljanja promjene u bazu.");
+
+                    console.log("Greška prilikom dohvata podataka iz baze");
                 });
 
-            }, function () {
+            } else {
+                $http.get('/api/Korisnik/getK?id=' + KorisnikId).then(function (response) {
+                    var Korisnik = response.data;
+                    Korisnik2 = {
+                        KorisnikId: Korisnik.KorisnikId,
+                        Ime_korisnika: Korisnik.Ime_korisnika,
+                        Prezime_korisnika: Korisnik.Prezime_korisnika,
+                        Korisnicko_ime: Korisnik.Korisnicko_ime,
+                        Password: Korisnik.Password,
+                        Potvrda: "Da",
+                        Role: rola
+                    };
 
-                console.log("Greška prilikom dohvata podataka iz baze");
-            });
+                    $http.put('api/Korisnik/updateK', Korisnik2).then(function (data) {
+                        $window.alert("Promijenjeno");
+                        $http.get('/api/Korisnik/getAllK').then(function (response) {
+                            $scope.korisnici = response.data;
+                        }, function () {
+                            console.log("Greška prilikom preuzimanja korisnika iz baze.");
+                        });
+                    }, function () {
+                        console.log("Greška prilikom postavljanja promjene u bazu.");
+                    });
+
+                }, function () {
+
+                    console.log("Greška prilikom dohvata podataka iz baze");
+                });
+            }
 
         }else
         {
@@ -99,31 +132,37 @@
 
         $http.get('/api/Korisnik/getK?id=' + KorisnikId).then(function (response) {
             var Korisnik = response.data;
-            var Korisnik2 = {
-                KorisnikId: Korisnik.KorisnikId,
-                Ime_korisnika: Korisnik.Ime_korisnika,
-                Prezime_korisnika: Korisnik.Prezime_korisnika,
-                Korisnicko_ime: Korisnik.Korisnicko_ime,
-                Password: Korisnik.Password,
-                Potvrda: "Ne",
-                Role: "???"
-            };
+            if (Korisnik.Ime_korisnika == 'ucitelj')
+            {
+                $window.alert('Ucitelj se ostavlja kao obavezan u aplikaciji te mu kao takvom ne možete zabraniti pristup ili ga obrisati.');
+            } else
+            {
+                var Korisnik2 = {
+                    KorisnikId: Korisnik.KorisnikId,
+                    Ime_korisnika: Korisnik.Ime_korisnika,
+                    Prezime_korisnika: Korisnik.Prezime_korisnika,
+                    Korisnicko_ime: Korisnik.Korisnicko_ime,
+                    Password: Korisnik.Password,
+                    Potvrda: "Ne",
+                    Role: "???"
+                };
 
-            $http.put('api/Korisnik/updateK', Korisnik2).then(function (data) {
-                $window.alert("Promijenjeno");
-                $http.get('/api/Korisnik/getAllK').then(function (response) {
-                    $scope.korisnici = response.data;
+                $http.put('api/Korisnik/updateK', Korisnik2).then(function (data) {
+                    $window.alert("Promijenjeno");
+                    $http.get('/api/Korisnik/getAllK').then(function (response) {
+                        $scope.korisnici = response.data;
+                    }, function () {
+                        console.log("Greška prilikom preuzimanja korisnika iz baze.");
+                    });
                 }, function () {
-                    console.log("Greška prilikom preuzimanja korisnika iz baze.");
+                    console.log("Greška prilikom postavljanja promjene u bazu.");
                 });
+            }
+
             }, function () {
-                console.log("Greška prilikom postavljanja promjene u bazu.");
+
+                console.log("Greška prilikom dohvata podataka iz baze");
             });
-
-        }, function () {
-
-            console.log("Greška prilikom dohvata podataka iz baze");
-        });
         
     };
 
@@ -132,14 +171,15 @@
         
         $http.delete('/api/Korisnik/deleteK/?Id=' + KorisnikId).then(function (response) {
             $window.alert("Korisnik uklonjen.");
-            $http.get('/api/Korisnik/getAllK').then(function (response) {
-                $scope.korisnici = response.data;
-            }, function () {
-                console.log("Greška prilikom preuzimanja korisnika iz baze.");
-            });
+
+                $http.get('/api/Korisnik/getAllK').then(function (response) {
+                    $scope.korisnici = response.data;
+                }, function () {
+                    console.log("Greška prilikom preuzimanja korisnika iz baze.");
+                });
         }, function () {
 
-            alert("Greska prilikom uklanjanja iz baze");
+            alert("Greska prilikom uklanjanja iz baze korisnika.");
 
         });
     };

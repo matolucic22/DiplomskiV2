@@ -26,6 +26,7 @@
                 if (result == true) {
                    $location.path('/korisnik/home');//reload stranice
                    $window.location.reload();
+                   
                 } else if (result == 404) {
                     $window.alert("Korisničko ime nije pronađeno.");
                 } else if (result == 400) {

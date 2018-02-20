@@ -46,6 +46,7 @@
     <Compile Include="IOcjeneGenericReporsitory.cs" />
     <Compile Include="IPredmetiGenericReporsitory.cs" />
     <Compile Include="IReporsitory.cs" />
+    <Compile Include="IUceniciGenericReporsitory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

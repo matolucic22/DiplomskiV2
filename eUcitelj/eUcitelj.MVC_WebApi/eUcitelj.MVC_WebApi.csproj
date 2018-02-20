@@ -198,6 +198,7 @@
     <Compile Include="Controllers\KvizController.cs" />
     <Compile Include="Controllers\OcjeneController.cs" />
     <Compile Include="Controllers\PredmetiController.cs" />
+    <Compile Include="Controllers\UceniciController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -206,10 +207,13 @@
     <Compile Include="ViewModels\KvizViewModel.cs" />
     <Compile Include="ViewModels\OcjeneViewModel.cs" />
     <Compile Include="ViewModels\PredmetiViewModel.cs" />
+    <Compile Include="ViewModels\UceniciViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\Controllers\Korisnik\DodajUcenikeRoditeljuController.js" />
     <Content Include="app\Controllers\Korisnik\HomeController.js" />
+    <Content Include="app\Controllers\Korisnik\IzmjeniUcenikeRoditeljuController.js" />
     <Content Include="app\Controllers\Korisnik\LoginController.js" />
     <Content Include="app\Controllers\Korisnik\PotvrdaKorisnikaController.js" />
     <Content Include="app\Controllers\Kviz\DodajKvizController.js" />
@@ -220,6 +224,8 @@
     <Content Include="app\Controllers\Kviz\RjesavajKvizController.js" />
     <Content Include="app\Controllers\navbarController.js" />
     <Content Include="app\Controllers\Ocjene\BrisanjeOcjenaUcenikPredmetiController.js" />
+    <Content Include="app\Controllers\Ocjene\DohvatiPredmeteUcenikaZaRoditeljaController.js" />
+    <Content Include="app\Controllers\Ocjene\DohvatiPredmeteUcenikRoditeljController.js" />
     <Content Include="app\Controllers\Ocjene\PregledOcjenaUcenikPredmetiController.js" />
     <Content Include="app\Controllers\Ocjene\UnosOcjenaController.js" />
     <Content Include="app\Controllers\Ocjene\UnosOcjenaUcenikController.js" />
@@ -235,7 +241,9 @@
     <Content Include="app\js\unique.js" />
     <Content Include="app\Services\AuthenticationService.js" />
     <Content Include="app\Views\Kontakt.html" />
+    <Content Include="app\Views\Korisnik\DodajUcenikeRoditelju.html" />
     <Content Include="app\Views\Korisnik\Home.html" />
+    <Content Include="app\Views\Korisnik\IzmjeniUcenikeRoditelju.html" />
     <Content Include="app\Views\Korisnik\Login.html" />
     <Content Include="app\Views\Korisnik\PotvrdaKorisnika.html" />
     <Content Include="app\Views\Korisnik\PotvrdaKorisnikaOdbijeno.html" />
@@ -252,6 +260,8 @@
     <Content Include="app\Views\Ocjene\BrisanjeOcjena.html" />
     <Content Include="app\Views\Ocjene\BrisanjeOcjenaUcenik.html" />
     <Content Include="app\Views\Ocjene\BrisanjeOcjenaUcenikOcjena.html" />
+    <Content Include="app\Views\Ocjene\DohvatiPredmeteUcenikRoditelj.html" />
+    <Content Include="app\Views\Ocjene\DohvatiPredmeteUcenikaZaRoditelja.html" />
     <Content Include="app\Views\Ocjene\PregledOcjena.html" />
     <Content Include="app\Views\Ocjene\PregledOcjenaUcenik.html" />
     <Content Include="app\Views\Ocjene\PregledOcjenaUcenikOcjena.html" />

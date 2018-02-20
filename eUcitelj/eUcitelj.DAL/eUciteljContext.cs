@@ -22,6 +22,7 @@ namespace eUcitelj.DAL
         public DbSet<Kviz> Kvizs { get; set; }
         public DbSet<Ocjene> Ocjenes { get; set; }
         public DbSet<Predmeti> Predmetis { get; set; }
+        public DbSet<Ucenici> Ucenicis { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)//code first
         {

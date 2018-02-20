@@ -1,5 +1,5 @@
-﻿<div class="container" ng-controller="PredmetiController">
-    <h1>Predmeti</h1>
+﻿<div class="container" ng-controller="DohvatiPredmeteUcenikRoditeljController">
+    <h1>Odaberite predmet za pregled ocjene</h1>
     <br />
 
     <form class="form-inline">
@@ -9,7 +9,6 @@
         </div>
     </form>
     <br />
-    <label><a ui-sref="addPredmeti">Dodaj predmet</a></label>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
@@ -17,18 +16,11 @@
                     Ime predmeta
                     <span class="glyphicon sort-icon" ng-show="sortKey=='Ime_predmeta'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                 </th>
-                <th>
-                    UREDI/OBRIŠI
-                </th>
-
             </tr>
         </thead>
         <tbody>
-            <tr dir-paginate="pr in predmeti | unique:'Ime_predmeta'| filter:search | orderBy:sortKey:reverse | itemsPerPage:50">
-                <td>{{pr.Ime_predmeta}}</td>
-                <td><a ui-sref="editPredmeti({PrIme: pr.Ime_predmeta})">Uredi</a>
-                    <a ui-sref="deletePredmeti({PrIme: pr.Ime_predmeta})">Obriši</a>
-                </td>
+            <tr dir-paginate="pr in korisnikP | itemsPerPage:5 | filter:search | orderBy:sortKey:reverse">
+                <td><a ui-sref="pregledOcjenaUcenikPredmet({UcPrId: pr.PredmetiId})">{{pr.Ime_predmeta}}</a></td>
             </tr>
         </tbody>
     </table>
@@ -37,3 +29,5 @@
                              boundary-links="true">
     </dir-pagination-controls>
 </div>
+
+

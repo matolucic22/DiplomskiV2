@@ -47,6 +47,14 @@ namespace eUcitelj.MVC_WebApi.AutoMapperConf
             CreateMap<IKvizDomainModel, KvizViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
 
 
+            //Domain to View
+            CreateMap<UceniciDomainModel, UceniciViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            //Interface(Domain)-Domain
+            CreateMap<UceniciDomainModel, IUceniciDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            //Interface(Domain)-View
+            CreateMap<IUceniciDomainModel, UceniciViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+
+
 
             CreateMap<Predmeti, PredmetiViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
             CreateMap<IPredmeti, PredmetiViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
@@ -59,6 +67,9 @@ namespace eUcitelj.MVC_WebApi.AutoMapperConf
 
             CreateMap<Kviz, KvizViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
             CreateMap<IKviz, KvizViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+
+            CreateMap<Ucenici, UceniciViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            CreateMap<IUcenici, UceniciViewModel>().PreserveReferences().ReverseMap().PreserveReferences();
         }
     }
 }

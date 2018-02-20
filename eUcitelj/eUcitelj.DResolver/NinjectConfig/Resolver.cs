@@ -24,11 +24,13 @@ namespace eUcitelj.DResolver.NinjectConfig
             Bind<IPredmetiGenericReporsitory>().To<PredmetiGenericReporsitory>();
             Bind<IOcjeneGenericReporsitory>().To<OcjeneGenericReporsiory>();
             Bind<IKvizGenericReporsitory>().To<KvizGenericReporsitory>();
+            Bind<IUceniciGenericReporsitory>().To<UceniciGenericReporsitory>();
 
             Bind<IKorisnikService>().To<KorisnikService>();
             Bind<IPredmetiService>().To<PredmetiService>();
             Bind<IOcjeneService>().To<OcjeneService>();
             Bind<IKvizService>().To<KvizService>();
+            Bind<IUceniciService>().To<UceniciService>();
         }
     }
 }

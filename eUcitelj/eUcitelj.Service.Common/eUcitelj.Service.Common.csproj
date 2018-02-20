@@ -44,6 +44,7 @@
     <Compile Include="IKvizService.cs" />
     <Compile Include="IOcjeneService.cs" />
     <Compile Include="IPredmetiService.cs" />
+    <Compile Include="IUceniciService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

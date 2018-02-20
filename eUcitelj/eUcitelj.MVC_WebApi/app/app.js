@@ -194,6 +194,24 @@ app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProv
                 }
             }
 
+        }).state('dohvatiPredmeteUcenikaU', {//dohvaća da ucenik moze vidit samo svoje predmete
+            url: '/ocjene/ocjenePregledPredmeti/',
+            controller: 'DohvatiPredmeteUcenikRoditeljController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/DohvatiPredmeteUcenikRoditelj.html'
+                }
+            }
+
+        }).state('dohvatiUcenikeR', {//dohvaća ucenike da roditelj moze vidit samo ucenike koji su mu dodjeljeni
+            url: '/ocjene/ocjenePregledUceniciR/',
+            controller: 'DohvatiPredmeteUcenikaZaRoditeljaController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Ocjene/DohvatiPredmeteUcenikaZaRoditelja.html'
+                }
+            }
+
         }).state('dohvatiPredmete', {
             url: '/kviz/dohvatiPredmete ',   
             controller: 'DohvatiPredmeteController',
@@ -252,6 +270,30 @@ app.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProv
             views: {
                 "root": {
                     templateUrl: 'app/Views/Kviz/RjesavajKviz.html'
+                }
+            }
+        }).state('dodajUcenikeRoditelju', {//dodavanje ucenika roditelju
+            url: '/korisnik/dodajUcenikeRoditelju',
+            controller: 'DodajUcenikeRoditeljuController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Korisnik/DodajUcenikeRoditelju.html'
+                }
+            }
+        }).state('izmjeniUcenikeRoditelju', {
+            url: '/korisnik/izmjeniUcenikeRoditelju/:KorId',
+            controller: 'IzmjeniUcenikeRoditeljuController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Korisnik/IzmjeniUcenikeRoditelju.html'
+                }
+            }
+        }).state('obrisiUcenikeRoditelju', {
+            url: '/korisnik/obrisiUcenikeRoditelju/:KorId',
+            controller: 'ObrisiUcenikeRoditeljuController',
+            views: {
+                "root": {
+                    templateUrl: 'app/Views/Korisnik/ObrisiUcenikeRoditelju.html'
                 }
             }
         }).state('kontakt', {

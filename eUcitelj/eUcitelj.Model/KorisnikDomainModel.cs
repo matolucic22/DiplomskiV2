@@ -24,5 +24,6 @@ namespace eUcitelj.Model
         public string Role { get; set; }
 
         public virtual ICollection<IPredmetiDomainModel> Predmeti { get; set; }//1 korisnit moze biti upisan na vise predmeta
+        public virtual ICollection<IUceniciDomainModel> Ucenici { get; set; }//1 korisnit moze biti upisan na vise predmeta
     }
 }

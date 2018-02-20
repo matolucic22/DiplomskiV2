@@ -24,5 +24,7 @@ namespace eUcitelj.MVC_WebApi.ViewModels
         public string Role { get; set; }
 
         public virtual ICollection<PredmetiViewModel> Predmeti { get; set; }//1 korisnit moze biti upisan na vise predmeta
+        public virtual ICollection<UceniciViewModel> Ucenici { get; set; }//1 korisnit moze biti upisan na vise predmeta
+
     }
 }

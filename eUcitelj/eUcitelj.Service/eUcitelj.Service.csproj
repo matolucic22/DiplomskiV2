@@ -45,6 +45,7 @@
     <Compile Include="OcjeneService.cs" />
     <Compile Include="PredmetiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UceniciService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eUcitelj.Model.Common\eUcitelj.Model.Common.csproj">

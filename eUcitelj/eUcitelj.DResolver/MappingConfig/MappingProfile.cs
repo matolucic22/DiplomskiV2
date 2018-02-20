@@ -23,6 +23,7 @@ namespace eUcitelj.DResolver.MappingConfig
             CreateMap<Korisnik, IKorisnik>().PreserveReferences().ReverseMap().PreserveReferences();
 
 
+
             //POCO to Domain
             CreateMap<Predmeti, PredmetiDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
             //POCO to IDomain
@@ -46,7 +47,15 @@ namespace eUcitelj.DResolver.MappingConfig
             //POCO to IPOCO
             CreateMap<Kviz, IKviz>().PreserveReferences().ReverseMap().PreserveReferences();
 
-            
+
+            //POCO to Domain
+            CreateMap<Ucenici, UceniciDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            //POCO to IDomain
+            CreateMap<Ucenici, IUceniciDomainModel>().PreserveReferences().ReverseMap().PreserveReferences();
+            //POCO to IPOCO
+            CreateMap<Ucenici, IUcenici>().PreserveReferences().ReverseMap().PreserveReferences();
+
+
         }
     }
 }

@@ -11,7 +11,6 @@
     .then(function (response) {
         $scope.Korisnik = response.data;
         $scope.Predmeti = $scope.Korisnik.Predmeti;
-        // $window.alert("");
     }
         , function (jqXHR) {
             window.alert("Greška prilikom dohvaćanja predmeta.");
