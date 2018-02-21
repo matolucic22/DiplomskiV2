@@ -12,11 +12,10 @@ namespace eUcitelj.MVC_WebApi.ViewModels
         public Guid KorisnikId { get; set; }
 
         public Guid PredmetiId { get; set; }
-        public int Bodovi_kvizova { get; set; }
+       // public int Bodovi_kvizova { get; set; }
 
         public virtual ICollection<OcjeneViewModel> Ocjene { get; set; }//1 predmet moze imati vise ocjena
 
-        public virtual ICollection<KvizViewModel> Kviz { get; set; }//1 predmet moze imati vise ocjena
-       // public virtual KorisnikViewModel Korisnik { get; set; }//poziva jednog korisnika di je npr id=1; - 1 predmet ima vise korisnika. Zato što svaki model ima 1 make m
+        public virtual ICollection<KvizViewModel> Kviz { get; set; }//1 predmet moze imati vise kvizova
     }
 }

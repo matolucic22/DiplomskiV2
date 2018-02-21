@@ -12,7 +12,6 @@
     //brisanje
     $scope.Obrisi = function (id2) {
         var KvizPromjenjeno;
-       // var id = $stateParams.KvizId;
         $http.get('/api/Kviz/getK?Id=' + id2).then(function (response) {
             $scope.kPitanje = response.data;
             txtPitanje = $scope.kPitanje.Pitanje;
@@ -28,7 +27,6 @@
                 if (Kvizovi[i].Pitanje == txtPitanje) {
                     $http.delete('api/Kviz/deleteK?id=' + Kvizovi[i].KvizId).then(function (response) {
                         KvizPromjenjeno = response.data;
-                       // $window.alert("Obrisano");
                         $http.get('/api/Predmeti/getP?id=' + id).then(function (response) {
                             $scope.Predmeti = response.data;
                             $scope.Kviz = $scope.Predmeti.Kviz;
@@ -44,6 +42,5 @@
         }, function () {
             alert("Greška prilikom dohvaćanja korisnika.");
         });
-    };
-   
+    }; 
 });

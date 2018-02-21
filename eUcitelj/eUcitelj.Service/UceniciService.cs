@@ -11,13 +11,12 @@ namespace eUcitelj.Service
 {
    public class UceniciService:IUceniciService
     {
-        protected IUceniciGenericReporsitory PredmetiGenericReporsitory { get; set; }//zove PredmetiGenericReporsitory
+        protected IUceniciGenericReporsitory PredmetiGenericReporsitory { get; set; }
 
-        public UceniciService(IUceniciGenericReporsitory predmetiGenericReporsitory)//povezuje sa PredmetiGenericReporsitory
+        public UceniciService(IUceniciGenericReporsitory predmetiGenericReporsitory)
         {
             this.PredmetiGenericReporsitory = predmetiGenericReporsitory;
         }
-
 
         public async Task<int> Add(IUceniciDomainModel addObj)
         {

@@ -14,6 +14,5 @@ namespace eUcitelj.DAL.Common
         string Opis { get; set; }
         DateTime DatumOcjene { get; set; }
         DateTime DatumUpisa { get; set; }
-        //IPredmeti Predmeti { get; set; }
     }
 }

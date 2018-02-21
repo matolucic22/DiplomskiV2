@@ -10,7 +10,7 @@ namespace eUcitelj.DAL.Models
 {
     public class Predmeti:IPredmeti
     {
-        
+  
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
 
         public Guid PredmetiId { get; set; }
@@ -18,6 +18,7 @@ namespace eUcitelj.DAL.Models
         public Guid KorisnikId { get; set; }
 
         public string Ime_predmeta { get; set; }
+
         public int Bodovi_kvizova { get; set; }
 
         public virtual ICollection<Ocjene> Ocjene { get; set; }//1 predmet moze imati vise ocijena
@@ -25,6 +26,6 @@ namespace eUcitelj.DAL.Models
         public virtual ICollection<Kviz> Kviz { get; set; }//1 predmet moze imati vise kvizova
 
         [ForeignKey("KorisnikId")]
-        public virtual Korisnik Korisnik { get; set; }//poziva jednog korisnika di je npr id=1; - 1 predmet ima vise korisnika. Zato što svaki model ima 1 make m
+        public virtual Korisnik Korisnik { get; set; }
     }
 }

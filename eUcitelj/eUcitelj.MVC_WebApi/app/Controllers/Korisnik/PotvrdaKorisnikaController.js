@@ -21,9 +21,8 @@
         
         if (rolaLower == "ucitelj" || rolaLower == "ucenik" || rolaLower == "roditelj") {
             if (rolaLower == "roditelj") {
-
                 $location.path('/korisnik/dodajUcenikeRoditelju');
-                $http.get('/api/Korisnik/getK?id=' + KorisnikId).then(function (response) {//prebaci U IDUCI CONT
+                $http.get('/api/Korisnik/getK?id=' + KorisnikId).then(function (response) {
                     var Korisnik = response.data;
                     Korisnik2 = {
                         KorisnikId: Korisnik.KorisnikId,
@@ -126,7 +125,6 @@
             }
     };
         
-    
 
     $scope.Ne = function (KorisnikId) {
 
@@ -169,7 +167,7 @@
     $scope.DeleteK = function (KorisnikId)
     {
         
-        $http.delete('/api/Korisnik/deleteK/?Id=' + KorisnikId).then(function (response) {
+        $http.delete('/api/Korisnik/deleteK?Id=' + KorisnikId).then(function (response) {
             $window.alert("Korisnik uklonjen.");
 
                 $http.get('/api/Korisnik/getAllK').then(function (response) {
@@ -182,6 +180,5 @@
             alert("Greska prilikom uklanjanja iz baze korisnika.");
 
         });
-    };
-   
+    };  
 });

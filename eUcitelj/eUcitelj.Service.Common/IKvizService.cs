@@ -12,7 +12,7 @@ namespace eUcitelj.Service.Common
         Task<IEnumerable<IKvizDomainModel>> GetAll();//vraća IEnimerable polje podataka
         Task<IKvizDomainModel> Get(Guid Id);
         Task<int> Add(IKvizDomainModel addObj);
-        Task<int> Update(IKvizDomainModel updated);//obavi i returna samo save
+        Task<int> Update(IKvizDomainModel updated);
         Task<int> Delete(Guid Id);
     }
 }

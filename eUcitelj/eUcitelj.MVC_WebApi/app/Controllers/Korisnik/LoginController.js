@@ -5,16 +5,13 @@
         Password: undefined
     };
     
-
         initController();
 
-        function initController() { //reset login status
+        function initController() { 
             AuthenticationService.CheckIsStoraged();
         };
 
         $scope.doStuff = function () {
-
-           // $window.alert(angular.fromJson($window.localStorage['ngStorage-currentUser']).Role);
             var userToLogin = {
                 Korisnicko_ime: $scope.Korisnicko_ime,
                 Password: undefined
@@ -34,13 +31,8 @@
                 } else {
                     $window.alert("Greška prilikom logiranja.");
                 }
-            });
-            
-        };
-   
-       
-    
-   
+            });    
+        };  
 });
 
 

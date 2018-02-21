@@ -90,7 +90,6 @@ namespace eUcitelj.MVC_WebApi.Controllers
                     toBeUpdated.Odg1 = updateK.Odg1;
                     toBeUpdated.Odg2 = updateK.Odg2;
                     toBeUpdated.Odg3 = updateK.Odg3;
-                    //toBeUpdated.Bodovi = 0;
                     toBeUpdated.Pitanje = updateK.Pitanje;
                     toBeUpdated.Tocan_odgovor = updateK.Tocan_odgovor;
                     

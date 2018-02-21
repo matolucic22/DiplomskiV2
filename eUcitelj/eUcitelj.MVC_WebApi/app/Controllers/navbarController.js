@@ -1,27 +1,4 @@
 ﻿app.controller('navbarController', function navbarController($scope, $http, $stateParams, $window, $state, $localStorage, AuthenticationService) {
-
-    //checkIfLogged();
-
-    //function checkIfLogged() {
-    //    AuthenticationService.CheckIsStoraged();
-    //    if (AuthenticationService.Check()) {
-    //        $scope.isLogged = false;
-    //    } else {
-    //        $scope.isLogged = true;
-    //    }
-    //}
-
-    //$scope.Check = function () {
-    //    $scope.isLogged = false;
-    //    AuthenticationService.CheckIsStoraged();
-    //    if (AuthenticationService.Check()) {
-    //        $scope.isLogged = false;
-    //    }
-    //    else {
-    //        $scope.isLogged = true;
-    //    }
-    //};
-
     $scope.LogOut = function () {
         AuthenticationService.Logout();
         $window.location.href = '/#/korisnik/login';
@@ -55,5 +32,4 @@
             return true;
         }
     };
-
 });

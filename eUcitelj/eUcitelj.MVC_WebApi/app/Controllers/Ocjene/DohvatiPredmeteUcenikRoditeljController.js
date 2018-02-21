@@ -10,6 +10,6 @@
         });
     $scope.sort = function (keyname) {
         $scope.sortKey = keyname;
-        $scope.reverse = !$scope.reverse;//if true make it false and vice versa
+        $scope.reverse = !$scope.reverse;
     };
 });

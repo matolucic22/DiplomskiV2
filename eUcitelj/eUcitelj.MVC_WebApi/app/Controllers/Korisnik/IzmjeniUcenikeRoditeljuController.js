@@ -1,5 +1,4 @@
-﻿app.controller('IzmjeniUcenikeRoditeljuController', function ($scope, $stateParams, $http, $window, $location) {//unos ocjena uceniku
-
+﻿app.controller('IzmjeniUcenikeRoditeljuController', function ($scope, $stateParams, $http, $window, $location) {
     id = $stateParams.KorId;
     var korisnici = [];
 
@@ -24,7 +23,7 @@
                });
         }, function () {
 
-            alert("Greska prilikom uklanjanja iz baze");
+            alert("Greška prilikom uklanjanja iz baze");
 
         });
     };

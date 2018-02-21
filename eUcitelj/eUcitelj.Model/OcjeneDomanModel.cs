@@ -20,8 +20,5 @@ namespace eUcitelj.Model
         public DateTime DatumOcjene { get; set; }
         [Column(TypeName = "date")]
         public DateTime DatumUpisa { get; set; }
-
-        //[ForeignKey("PredmetiId")]
-        //public virtual IPredmeti Predmeti { get; set; }
     }
 }

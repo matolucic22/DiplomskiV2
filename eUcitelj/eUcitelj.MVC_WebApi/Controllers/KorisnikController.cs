@@ -96,7 +96,6 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 }
                 else
                 {
-                   // toBeUpdated.KorisnikId = updateK.KorisnikId;
                     toBeUpdated.Ime_korisnika = updateK.Ime_korisnika;
                     toBeUpdated.Prezime_korisnika = updateK.Prezime_korisnika;
                     toBeUpdated.Korisnicko_ime = updateK.Korisnicko_ime;

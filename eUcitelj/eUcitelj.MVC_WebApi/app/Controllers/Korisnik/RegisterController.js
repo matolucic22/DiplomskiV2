@@ -26,11 +26,10 @@
         };      
 
         for (var i = 0; i < provjeraKI.length; i++) {
-            if (provjeraKI[i].Korisnicko_ime == addObj.Korisnicko_ime) {//!!!!!!!!!!!!!!!!!!!!!!!!!
+            if (provjeraKI[i].Korisnicko_ime == addObj.Korisnicko_ime) {
                counter++;
                 
                 return window.alert("Unešeno korisničko ime već postoji u bazi.");
-                
             }
         }
 

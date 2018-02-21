@@ -15,7 +15,5 @@ namespace eUcitelj.DAL.Common
         String Password { get; set; }
         String Role { get; set; }
         String Potvrda { get; set; }
-       // ICollection<IPredmeti> Predmeti { get; set; }//1 korisnik moze upisati vise predmeta
-
     }
 }

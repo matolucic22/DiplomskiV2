@@ -43,5 +43,4 @@
             $window.alert("Unjeli ste krivu ocjenu. Ponovite unos.");
         }
     };
-
 });

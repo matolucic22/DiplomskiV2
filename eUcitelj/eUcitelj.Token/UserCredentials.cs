@@ -8,7 +8,7 @@ namespace eUcitelj.Token
 {
     public class UserCredentials
     {
-        public string Korisnicko_ime { get; set; }//Korisnicko_ime
+        public string Korisnicko_ime { get; set; }
         public string Password { get; set; }
     }
 }

@@ -11,11 +11,6 @@
             var button = document.getElementById("button");
             button.parentNode.removeChild(button);
         }
-        //TO = $scope.Pitanja[0].Tocan_odgovor;
-        // $window.alert(TO);
-        //for (var i = 0; i < $scope.Pitanja.length; i++) {
-        //    TO[i] = $scope.Pitanja[i].Tocan_odgovor;
-        //}
     }, function ()
     {
         $window.alert("Greška prilikom pronalasa kviza");
@@ -52,60 +47,9 @@
                 }
             }
    
-            //$scope.e;
+            
             document.getElementById("TocanOdgovor").innerHTML = e;
             var button = document.getElementById("button");
             button.parentNode.removeChild(button);
-
-
-    //$window.alert("Broj tocnih odgovora: "+e);
-
-
-
-
-
-
-        
-        //POKUSAJ2
-
-        //var odgDiv = document.getElementsByName('Odg');
-        
-        //var k = 0;
-        //var l = 0;
-        //var Odg=[];
-        //for (var i = 0; i < odgDiv.length; i++) {
-        //    if (odgDiv[i].checked) {
-        //        Odg[l] = odgDiv[i].value;
-              
-        //        l++;
-        //    }
-        //}
-
-        //for(var i=0;i<Odg.length;i++)
-        //{
-        //    for (var j = 0; j < TO.length; j++)
-        //    {
-        //        if(Odg[i]==TO[j])
-        //        {
-        //            k++;
-                    
-        //        }
-        //    }
-        //}
-        //$window.alert("Br bodova: " + k);
-
-        //var test = document.getElementsByName('Pitanje');
-
-        //var sizes = test.length;
-        //alert(sizes);
-
-        //for (i = 0; i < $scope.Pitanja.length; i++)
-        //{
-        //    $window.alert(document.querySelector('input[name=Odg]:checked').value);
-        //}
-         
-
-        //$window.alert(document.querySelector('input[name=Odg]:checked').value);
-
     };
 });

@@ -19,10 +19,8 @@
         Predmeti = response.data;
     }
         , function (jqXHR) {
-            window.alert("Greška prilikom dohvaćanja IDova korisnika.");
+            window.alert("Greška prilikom dohvaćanja predmeta.");
         });
-
-   
 
     $scope.Unesi = function () {
         for (i = 0; i < Predmeti.length; i++) {
@@ -49,6 +47,5 @@
                 });
             }
         }
-    };
-   
+    }; 
 });

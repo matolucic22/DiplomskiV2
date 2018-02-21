@@ -17,6 +17,5 @@ namespace eUcitelj.Service.Common
         Task<IKorisnikDomainModel> FindByUserName(string korisnicko_ime);
         Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnicko_ime();
         Task<IEnumerable<IKorisnikDomainModel>> GetAllKorisnikId();
-        //Task<IKorisnikDomainModel> GetAllKorisnikId();
     }
 }

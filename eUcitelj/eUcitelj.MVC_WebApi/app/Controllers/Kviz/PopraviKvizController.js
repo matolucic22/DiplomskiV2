@@ -12,8 +12,7 @@
     $scope.update = function () {
         var id = $stateParams.KvizId;
         if ($scope.Pitanje != null && $scope.Odg1 != null && $scope.Odg2 != null && $scope.Odg3 != null && $scope.Tocan_odgovor != null) {
-            
-            
+                  
             $http.get('api/Kviz/getAllK').then(function (response) {
                 Kvizovi = response.data;
 
@@ -25,29 +24,20 @@
                             Odg1: $scope.Odg1,
                             Odg2: $scope.Odg2,
                             Odg3: $scope.Odg3,
-                            //  Bodovi: $scope.Bodovi,
                             Tocan_odgovor: $scope.Tocan_odgovor
                         };
                         $http.put('api/Kviz/updateK', Kviz).then(function (response) {
                             KvizPromjenjeno = response.data;
-                            //$window.location.reload();
-
                         }, function () {
                             $window.alert("Greška prilikom promjene");
                         });
                     }
-
                 }
 
             }, function () {
                 $window.alert("Greška priliom dohvaćanja korinsika");
             });
-        
-        
-        
         $window.alert("Promijenjeno");
-        //$location.path('/kviz/dohvatiPredmete/popraviKviz/:KvizId');
         }
     };
-
 });

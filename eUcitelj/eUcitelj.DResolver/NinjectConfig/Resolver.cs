@@ -17,7 +17,7 @@ namespace eUcitelj.DResolver.NinjectConfig
     {
         public override void Load()
         {
-            Bind<IeUciteljContext>().To<eUciteljContext>();//promjena u resolveru
+            Bind<IeUciteljContext>().To<eUciteljContext>();
             
             Bind<IReporsitory>().To<Reporsitory.Reporsitory>();
             Bind<IKorisnikGenericReporsitory>().To<KorisnikGenericReporsitory>();

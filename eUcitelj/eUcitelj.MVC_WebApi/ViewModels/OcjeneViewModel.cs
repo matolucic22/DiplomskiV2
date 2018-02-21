@@ -16,6 +16,5 @@ namespace eUcitelj.MVC_WebApi.ViewModels
         public DateTime DatumOcjene { get; set; }
         [Column(TypeName = "date")]
         public DateTime DatumUpisa { get; set; }
-        //public virtual PredmetiViewModel Predmeti { get; set; }
     }
 }

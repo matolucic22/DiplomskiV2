@@ -11,7 +11,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace eUcitelj.DAL
 {
-    public class eUciteljContext : DbContext, IeUciteljContext//Zašto ne moram sve naslijedit iz interfacea u ovom slucaju? 
+    public class eUciteljContext : DbContext, IeUciteljContext
     {
         public eUciteljContext() : base("eUciteljContext")
         {
@@ -29,7 +29,7 @@ namespace eUcitelj.DAL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();//Instead, the table names will be Korisniks, Kvizs. Developers disagree about whether table names should be pluralized or not. Method prevents table name of being puralized.
         }
 
-        public new DbSet<T> Set<T>() where T : class// potpuni sličko kontekstu. Nešto kao instanca za svaku bazu koju smo kreirali!!
+        public new DbSet<T> Set<T>() where T : class//Nešto kao instanca za svaku bazu koju smo kreirali
         {
             return base.Set<T>();
         }

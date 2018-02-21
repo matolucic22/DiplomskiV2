@@ -20,8 +20,6 @@
             console.log("Nemoguće dohvatiti predmet pod tim ID-om.");
         });
 
-
-    //DODAVANJE OCJENE U BAZU//
     $scope.Obrisi = function (OcjeneId) {
         $http.delete('api/Ocjene/deleteO?id=' + OcjeneId)
                .then(function (data) {

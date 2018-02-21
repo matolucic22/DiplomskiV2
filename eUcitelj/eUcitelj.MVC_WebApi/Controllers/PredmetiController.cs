@@ -68,7 +68,6 @@ namespace eUcitelj.MVC_WebApi.Controllers
             {
                 
                 addObj.PredmetiId = Guid.NewGuid();
-               // addObj.KorisnikId = Guid.NewGuid();
                 var response= await PredmetiService.Add(Mapper.Map<IPredmetiDomainModel>(addObj));
                 return Request.CreateResponse(HttpStatusCode.OK, response);
 
@@ -90,15 +89,13 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Nije pronađen traženi predmet.");
                 }
-                if(updateP.Ime_predmeta==null||/*updateP.KorisnikId==null||*/updateP.PredmetiId==null)
+                if(updateP.Ime_predmeta==null||updateP.PredmetiId==null)
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Greška u unosu!");
                 }
                 else
                 {
-                   // toBeUpdated.PredmetiId = updateP.PredmetiId;
                     toBeUpdated.Ime_predmeta = updateP.Ime_predmeta;
-                    //toBeUpdated.KorisnikId = updateP.KorisnikId;
                 }
                 var response = await PredmetiService.Update(Mapper.Map<IPredmetiDomainModel>(toBeUpdated));
                 return Request.CreateResponse(HttpStatusCode.OK, response);

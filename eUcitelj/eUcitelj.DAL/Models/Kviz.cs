@@ -12,26 +12,20 @@ namespace eUcitelj.DAL.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid KvizId { get; set; }
+
         public int Bodovi { get; set; }
 
         public string Odg1 { get; set; }
 
         public string Odg2 { get; set; }
-
-
+        
         public string Odg3 { get; set; }
 
-
         public string Pitanje { get; set; }
-
-        
-
+                
         public Guid PredmetiId { get; set; }
-
-
+        
         public string Tocan_odgovor { get; set; }
 
-        //[ForeignKey("PredmetiId")]
-        //public virtual Predmeti Predmeti { get; set; }
     }
 }

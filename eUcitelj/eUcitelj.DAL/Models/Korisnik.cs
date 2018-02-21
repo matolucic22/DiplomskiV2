@@ -9,39 +9,15 @@ using System.Threading.Tasks;
 
 namespace eUcitelj.DAL.Models
 {
-    //public class UniqueUrlAttribute : ValidationAttribute
-    //{
-    //    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-    //    {
-    //        eUciteljContext db = new eUciteljContext();
-    //        string Korisnicko_ime = value.ToString();
-    //        int count = db.Korisniks.Where(x => x.Korisnicko_ime == Korisnicko_ime).ToList().Count();
-    //        if (count != 0)
-    //        {
-    //            return new ValidationResult("Unešeno korisničko ime već postoji.");
-
-    //        }
-    //        return ValidationResult.Success;
-    //    }
-    //}
     public class Korisnik:IKorisnik
     {
-        //public Korisnik()
-        //{
-        //    // public virtual ICollection<Predmeti> Predmeti { get; set; }//1 korisnit moze biti upisan na vise predmeta
-        //    //this.Predmeti = new HashSet<Predmeti>();
-        //    public virtual ICollection<Ucenici> Ucenici { get; set; }//1 korisnit moze biti upisan na vise predmeta
-        //    //this.Ucenici = new HashSet<Ucenici>();
-        //}
-
-
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid KorisnikId { get; set; }
 
         public string Ime_korisnika { get; set; }
 
         public string Prezime_korisnika { get; set; }
-        //[UniqueUrl]
+
         public string Korisnicko_ime { get; set; }
 
         public string Password { get; set; }

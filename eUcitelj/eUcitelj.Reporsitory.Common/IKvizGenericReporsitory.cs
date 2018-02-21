@@ -12,7 +12,7 @@ namespace eUcitelj.Reporsitory.Common
         Task<IEnumerable<IKvizDomainModel>> GetAllAsync();//vraća IEnimerable polje podataka
         Task<IKvizDomainModel> GetAsync(Guid Id);
         Task<int> AddAsync(IKvizDomainModel addObj);
-        Task<int> UpdateAsync(IKvizDomainModel updated);//obavi i returna samo save
+        Task<int> UpdateAsync(IKvizDomainModel updated);
         Task<int> DeleteAsync(Guid Id);
     }
 }

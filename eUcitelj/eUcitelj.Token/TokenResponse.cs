@@ -8,8 +8,8 @@ namespace eUcitelj.Token
 {
     public class TokenResponse
     {
-        public Guid KorisnikId { get; set; }//KorisnikId
-        public string Korisnicko_ime { get; set; }//Korisnicko_ime
+        public Guid KorisnikId { get; set; }
+        public string Korisnicko_ime { get; set; }
         public Token Token { get; set; }
         public string Role { get; set; }
     }

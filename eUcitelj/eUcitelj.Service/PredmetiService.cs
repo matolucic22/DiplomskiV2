@@ -11,7 +11,7 @@ namespace eUcitelj.Service
 {
     public class PredmetiService:IPredmetiService
     {
-        protected IPredmetiGenericReporsitory PredmetiGenericReporsitory { get; set; }//zove PredmetiGenericReporsitory
+        protected IPredmetiGenericReporsitory PredmetiGenericReporsitory { get; set; }
 
         public PredmetiService(IPredmetiGenericReporsitory predmetiGenericReporsitory)//povezuje sa PredmetiGenericReporsitory
         {

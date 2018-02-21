@@ -70,7 +70,6 @@ namespace eUcitelj.MVC_WebApi.Controllers
             {
 
                 addObj.UceniciId = Guid.NewGuid();
-                // addObj.KorisnikId = Guid.NewGuid();
                 var response = await UceniciService.Add(Mapper.Map<IUceniciDomainModel>(addObj));
                 return Request.CreateResponse(HttpStatusCode.OK, response);
 
@@ -80,38 +79,6 @@ namespace eUcitelj.MVC_WebApi.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
         }
-
-        //[HttpPut]
-        //[Route("updateP")]
-        //public async Task<HttpResponseMessage> UpdatePredmet(PredmetiViewModel updateP)
-        //{
-        //    try
-        //    {
-        //        PredmetiViewModel toBeUpdated = Mapper.Map<PredmetiViewModel>(await PredmetiService.Get(updateP.PredmetiId));
-
-        //        if (toBeUpdated == null)
-        //        {
-        //            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Nije pronađen traženi predmet.");
-        //        }
-        //        if (updateP.Ime_predmeta == null ||/*updateP.KorisnikId==null||*/updateP.PredmetiId == null)
-        //        {
-        //            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Greška u unosu!");
-        //        }
-        //        else
-        //        {
-        //            // toBeUpdated.PredmetiId = updateP.PredmetiId;
-        //            toBeUpdated.Ime_predmeta = updateP.Ime_predmeta;
-        //            //toBeUpdated.KorisnikId = updateP.KorisnikId;
-        //        }
-        //        var response = await PredmetiService.Update(Mapper.Map<IPredmetiDomainModel>(toBeUpdated));
-        //        return Request.CreateResponse(HttpStatusCode.OK, response);
-
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
-        //    }
-        //}
 
         [HttpDelete]
         [Route("deleteU")]

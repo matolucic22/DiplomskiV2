@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace eUcitelj.Reporsitory
 {
-
     public class Reporsitory : IReporsitory
     {
         protected IeUciteljContext Context { get; set; }
@@ -43,7 +42,6 @@ namespace eUcitelj.Reporsitory
         {
             T entity = await Context.Set<T>().FindAsync(Id);
             return entity;
-
         }
 
         public async Task<int> UpdateAsync<T>(T updated) where T : class

@@ -17,8 +17,6 @@
             if (Kvizovi[i].Pitanje == txtPitanje) {
                 $http.delete('api/Kviz/deleteK?id=' + Kvizovi[i].KvizId).then(function (response) {
                     KvizPromjenjeno = response.data;
-                    //$window.location.reload();
-
                 }, function () {
                     $window.alert("Greška prilikom promjene");
                 });
@@ -27,8 +25,6 @@
     }, function () {
         alert("Greška prilikom dohvaćanja korisnika.");
     });
-
-
 });
 
 

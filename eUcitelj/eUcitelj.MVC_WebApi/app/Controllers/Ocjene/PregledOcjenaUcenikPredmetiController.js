@@ -28,5 +28,4 @@
         }, function () {
             console.log("Greška prilikom prikazivanja ocjene.");
         });
-
 });

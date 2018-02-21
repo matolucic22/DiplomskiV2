@@ -70,11 +70,11 @@ function Service($http, $localStorage, localStorageService) {
 
         if($localStorage.currentUser!=undefined)
         {
-            //provjeri dali je token istekao
-            if($localStorage.currentUser.Token.ExpirationTime<miliseconds) //??
+            
+            if($localStorage.currentUser.Token.ExpirationTime<miliseconds) 
             {
                 Logout();
-                console.log("PREDUGO LOGIRAN");//!!!!!!!
+                console.log("PREDUGO LOGIRAN");
             }
         }
     }
@@ -82,7 +82,6 @@ function Service($http, $localStorage, localStorageService) {
     function Check() {
         if($localStorage.currentUser!=undefined && $http.defaults.headers.common.Authorization != '')
         {
-            //console.log($localStorage.currentUser.Korisnicko_ime);
             return true;
         }else
         {
